@@ -1,5 +1,6 @@
-module hu.unideb {
+module JavaFX11 {
     requires javafx.controls;
     requires javafx.fxml;
-    exports hu.unideb;
+
+    opens hu.unideb.inf;
 }
