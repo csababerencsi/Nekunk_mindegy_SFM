@@ -64,4 +64,13 @@ public class FXMLController {
     @FXML
     private Button saveSugar;
 
+    @FXML
+    private TextField changeValue;
+
+    @FXML
+    private TextField paymentValue;
+
+    @FXML
+    private TextField moneyAmout;
+
 }
