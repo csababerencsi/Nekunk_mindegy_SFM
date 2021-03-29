@@ -1,74 +1,59 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package hu.unideb.inf.controller;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-/**
- * FXML Controller class
- *
- * @author kocsisg
- */
-public class FXMLController{
-
-      
-    @FXML
-    private Button espresso;
+public class FXMLController {
 
     @FXML
-    private Button cappucino;
+    private Button espressoBtn;
 
     @FXML
-    private Button hchocolate;
+    private Button CappucinoBtn;
 
     @FXML
-    private Button coffewmilk;
+    private Button HotChocolateBtn;
 
     @FXML
-    private TextField valueMoney;
+    private Button milkyCoffeeBtn;
 
     @FXML
-    private Label currentMoney;
+    private TextField inputMoney;
 
     @FXML
-    private TextField valueCoffe;
+    private Label valueMoney;
 
     @FXML
-    private Label currentCoffe;
+    private TextField inputCoffee;
 
     @FXML
-    private TextField valueWater;
+    private Label valueCoffee;
 
     @FXML
-    private Label currentWater;
+    private TextField inputWater;
 
     @FXML
-    private TextField valueMilk;
+    private Label valueWater;
 
     @FXML
-    private Label currentMilk;
+    private TextField inputMilk;
 
     @FXML
-    private TextField valueSugar;
+    private Label valueMilk;
 
     @FXML
-    private Label currentSugar;
+    private TextField inputSugar;
+
+    @FXML
+    private Label valueSugar;
 
     @FXML
     private Button saveMoney;
 
     @FXML
-    private Button saveCoffe;
+    private Button saveCoffee;
 
     @FXML
     private Button saveWater;
@@ -78,6 +63,5 @@ public class FXMLController{
 
     @FXML
     private Button saveSugar;
-
 
 }
