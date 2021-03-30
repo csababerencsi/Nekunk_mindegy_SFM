@@ -1,20 +1,23 @@
 package hu.unideb.inf.controller;
 
+import hu.unideb.inf.Amounts;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class FXMLController {
-
+    
+    
     @FXML
     private Button espressoBtn;
 
     @FXML
-    private Button CappucinoBtn;
+    private Button cappucinoBtn;
 
     @FXML
-    private Button HotChocolateBtn;
+    private Button latteBtn;
 
     @FXML
     private Button milkyCoffeeBtn;
@@ -72,5 +75,17 @@ public class FXMLController {
 
     @FXML
     private TextField moneyAmout;
+
+    public Label getValueCoffee() {
+        return valueCoffee;
+    }
+
+    public void setValueCoffee(Label valueCoffee) {
+        this.valueCoffee = valueCoffee;
+    }
+    
+    
+    
+    
 
 }
