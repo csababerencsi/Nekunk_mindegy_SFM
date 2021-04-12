@@ -1,6 +1,7 @@
 package hu.unideb.inf.controller;
 
 import hu.unideb.inf.Amounts;
+import hu.unideb.inf.Coffes;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -12,10 +13,22 @@ public class FXMLController {
     
     @FXML
     private Button espressoBtn;
-
+    
+    @FXML
+    void espressoBtnPush(ActionEvent event){
+       Coffes espresso =new Coffes();
+       espresso.makeEspresso();
+       
+    }
     @FXML
     private Button cappucinoBtn;
-
+    
+     @FXML
+    void cappucinoBtnPush(ActionEvent event){
+       Coffes espresso =new Coffes();
+       espresso.makeEspresso();
+       
+    }
     @FXML
     private Button latteBtn;
 
@@ -75,6 +88,9 @@ public class FXMLController {
 
     @FXML
     private TextField moneyAmout;
+    
+    @FXML
+    private Button startButton;
 
     public Label getValueCoffee() {
         return valueCoffee;

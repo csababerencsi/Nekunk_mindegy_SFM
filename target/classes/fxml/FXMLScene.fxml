@@ -8,7 +8,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="571.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.FXMLController">
    <children>
-        <Button fx:id="espressoBtn" layoutX="65.0" layoutY="162.0" mnemonicParsing="false" text="Espresso" />
+        <Button fx:id="espressoBtn" layoutX="65.0" layoutY="162.0" mnemonicParsing="false" onAction="#espressoBtnPush" text="Espresso" />
         <Button fx:id="cappucinoBtn" layoutX="57.0" layoutY="208.0" mnemonicParsing="false" text="Cappuccino" />
         <Button fx:id="latteBtn" layoutX="75.0" layoutY="252.0" mnemonicParsing="false" text="Latte" />
         <Button fx:id="milkyCoffeeBtn" layoutX="61.0" layoutY="296.0" mnemonicParsing="false" text="Tejes kávé" />

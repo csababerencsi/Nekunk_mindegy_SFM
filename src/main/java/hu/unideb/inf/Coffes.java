@@ -19,6 +19,7 @@ public class Coffes {
         amounts.setSumWater(amounts.getSumWater()-60);
         amounts.setSumSugar(amounts.getSumSugar()-8);
         amounts.setSumMilk(amounts.getSumMilk()-0);
+        
     }
     
     public void makeCappuccino(){
