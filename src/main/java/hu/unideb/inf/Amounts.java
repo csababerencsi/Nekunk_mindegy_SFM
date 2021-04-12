@@ -16,10 +16,10 @@ import javafx.scene.control.Label;
  * @author Kristof
  */
 public class Amounts {
-    private int sumCoffe=1000;
-    private int sumMilk=1000;
-    private int sumWater=1000;
-    private int sumSugar=1000;
+    private int sumCoffe=1500;
+    private int sumMilk=1400;
+    private int sumWater=1300;
+    private int sumSugar=1200;
     
   
     public int getSumCoffe() {

@@ -95,9 +95,18 @@ public class FXMLController {
     public Label getValueCoffee() {
         return valueCoffee;
     }
+    
+    public void startValues(){
+        Amounts amounts = new Amounts();
+        valueCoffee.setText(Integer.toString(amounts.getSumCoffe()));
+        valueMilk.setText(Integer.toString(amounts.getSumMilk()));
+        valueWater.setText(Integer.toString(amounts.getSumWater()));
+        valueSugar.setText(Integer.toString(amounts.getSumSugar()));
+    }
 
-    public void setValueCoffee(Label valueCoffee) {
-        this.valueCoffee = valueCoffee;
+    
+    @FXML private void startButtonPushed(ActionEvent event) {
+        startValues();
     }
     
     
