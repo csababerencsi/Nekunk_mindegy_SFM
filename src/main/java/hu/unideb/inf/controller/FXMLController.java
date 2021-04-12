@@ -23,12 +23,6 @@ public class FXMLController {
     private Button cappucinoBtn;
 
     @FXML
-    void cappucinoBtnPush(ActionEvent event) {
-        Coffes espresso = new Coffes();
-        espresso.makeEspresso();
-
-    }
-    @FXML
     private Button latteBtn;
 
     @FXML
@@ -90,6 +84,9 @@ public class FXMLController {
 
     @FXML
     private Button startButton;
+    
+    @FXML
+    private Button resetButton;
 
     public Label getValueCoffee() {
         return valueCoffee;
@@ -189,9 +186,26 @@ public class FXMLController {
         
     }
     
+    public void resetFile(){
+        
+        ArrayList<String> adatlista = new ArrayList<>();
+        adatlista.add("0");
+        adatlista.add("10000");
+        adatlista.add("10000");
+        adatlista.add("10000");
+        adatlista.add("10000");
+        
+        updateFile(adatlista);
+    }
+    
     @FXML
     private void startButtonPushed(ActionEvent event) {
         startValues();
+    }
+    
+    @FXML
+    private void resetButtonPushed(ActionEvent event) {
+        resetFile();
     }
 
     @FXML
@@ -201,5 +215,15 @@ public class FXMLController {
         updateFile(tmp);
         
     }
+    
+    @FXML
+    private void cappucinoBtnPush(ActionEvent event) {
+        Coffes cappucino = new Coffes();
+        ArrayList<String> tmp = cappucino.makeCappuccino();
+        updateFile(tmp);
+        
+    }
+    
+    
 
 }
