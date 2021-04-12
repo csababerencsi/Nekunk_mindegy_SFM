@@ -28,11 +28,11 @@
         <TextField fx:id="inputSugar" layoutX="554.0" layoutY="309.0" prefHeight="26.0" prefWidth="182.0" promptText="Allitsd be a kivánt mennyiséget" />
         <Label layoutX="453.0" layoutY="313.0" text="Cukor:" />
         <Label fx:id="valueSugar" layoutX="521.0" layoutY="313.0" text="0" />
-      <Button fx:id="saveMoney" layoutX="745.0" layoutY="136.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" text="Mentés" />
-      <Button fx:id="saveCoffee" layoutX="745.0" layoutY="179.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" text="Mentés" />
-      <Button fx:id="saveWater" layoutX="745.0" layoutY="225.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" text="Mentés" />
-      <Button fx:id="saveMilk" layoutX="745.0" layoutY="265.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" text="Mentés" />
-      <Button fx:id="saveSugar" layoutX="745.0" layoutY="309.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" text="Mentés" />
+      <Button fx:id="saveMoney" layoutX="745.0" layoutY="136.0" mnemonicParsing="false" onAction="#saveMoneyBtnPush" prefHeight="25.0" prefWidth="57.0" text="Mentés" />
+      <Button fx:id="saveCoffee" layoutX="745.0" layoutY="179.0" mnemonicParsing="false" onAction="#saveCoffeeBtnPush" prefHeight="25.0" prefWidth="57.0" text="Mentés" />
+      <Button fx:id="saveWater" layoutX="745.0" layoutY="225.0" mnemonicParsing="false" onAction="#saveWaterBtnPush" prefHeight="25.0" prefWidth="57.0" text="Mentés" />
+      <Button fx:id="saveMilk" layoutX="745.0" layoutY="265.0" mnemonicParsing="false" onAction="#saveMilkBtnPush" prefHeight="25.0" prefWidth="57.0" text="Mentés" />
+      <Button fx:id="saveSugar" layoutX="745.0" layoutY="309.0" mnemonicParsing="false" onAction="#saveSugarBtnPush" prefHeight="25.0" prefWidth="57.0" text="Mentés" />
       <Label layoutX="454.0" layoutY="505.0" opacity="0.0" text="Visszajáró:" />
       <TextField fx:id="changeValue" layoutX="524.0" layoutY="501.0" opacity="0.0" prefHeight="25.0" prefWidth="87.0" />
       <Label layoutX="458.0" layoutY="390.0" opacity="0.0" text="Fizetendő:" />

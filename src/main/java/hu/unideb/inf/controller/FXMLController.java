@@ -239,6 +239,46 @@ public class FXMLController {
         
     }
     
+     @FXML
+    private void saveMoneyBtnPush(ActionEvent event) {
+        String tmp=inputMoney.getText();
+        ArrayList<String> adatok = getAmounts();
+        adatok.set(0,tmp);
+        updateFile(adatok);
+    }
+    
+     @FXML
+    private void saveCoffeeBtnPush(ActionEvent event) {
+        String tmp=inputCoffee.getText();
+        ArrayList<String> adatok = getAmounts();
+        adatok.set(1,tmp);
+        updateFile(adatok);
+    }
+    
+     @FXML
+    private void saveWaterBtnPush(ActionEvent event) {
+        String tmp=inputWater.getText();
+        ArrayList<String> adatok = getAmounts();
+        adatok.set(3,tmp);
+        updateFile(adatok);
+    }
+    
+     @FXML
+    private void saveMilkBtnPush(ActionEvent event) {
+        String tmp=inputMilk.getText();
+        ArrayList<String> adatok = getAmounts();
+        adatok.set(2,tmp);
+        updateFile(adatok);
+    }
+    
+     @FXML
+    private void saveSugarBtnPush(ActionEvent event) {
+        String tmp=inputSugar.getText();
+        ArrayList<String> adatok = getAmounts();
+        adatok.set(4,tmp);
+        updateFile(adatok);
+    }
+    
     
 
 }
