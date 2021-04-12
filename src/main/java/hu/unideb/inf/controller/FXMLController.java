@@ -234,7 +234,7 @@ public class FXMLController {
      @FXML
     private void milkyBtnPush(ActionEvent event) {
         Coffes milky = new Coffes();
-        ArrayList<String> tmp = milky.makeLatte();
+        ArrayList<String> tmp = milky.makeMilkyCoffe();
         updateFile(tmp);
         
     }
