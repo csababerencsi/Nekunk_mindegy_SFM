@@ -19,7 +19,7 @@ public class Coffes {
         
         FXMLController control = new FXMLController();
         
-        Amounts amounts = new Amounts();
+
         
         ArrayList<String> adatok = control.getAmounts();
         ArrayList<Integer> intadatok = new ArrayList<Integer>();
@@ -47,7 +47,7 @@ public class Coffes {
         
         FXMLController control = new FXMLController();
         
-        Amounts amounts = new Amounts();
+       
         
         ArrayList<String> adatok = control.getAmounts();
         ArrayList<Integer> intadatok = new ArrayList<Integer>();
@@ -72,23 +72,63 @@ public class Coffes {
         
     }
     
-    public void makeLatte(){
-        Amounts amounts = new Amounts();
-     
-        amounts.setSumCoffe(amounts.getSumCoffe()-14);
-        amounts.setSumWater(amounts.getSumWater()-60);
-        amounts.setSumSugar(amounts.getSumSugar()-8);
-        amounts.setSumMilk(amounts.getSumMilk()-90);
+    public ArrayList<String> makeLatte(){
+       
+        
+        FXMLController control = new FXMLController();
+        
+
+        
+        ArrayList<String> adatok = control.getAmounts();
+        ArrayList<Integer> intadatok = new ArrayList<Integer>();
+        ArrayList<String> adatokreturn = new ArrayList<String>();
+        
+        for(int i=0;i<adatok.size();i++){
+            intadatok.add(Integer.parseInt(adatok.get(i)));
+        }
+        
+        intadatok.set(0,intadatok.get(0)+300);
+        intadatok.set(1,intadatok.get(1)-14);
+        intadatok.set(2,intadatok.get(2)-60);
+        intadatok.set(3,intadatok.get(3)-8);
+        intadatok.set(4,intadatok.get(4)-90);
+        
+        
+        for(int i=0;i<intadatok.size();i++){
+            adatokreturn.add(Integer.toString(intadatok.get(i)));
+        }
+        
+        return adatokreturn;
     }
     
-    public void makeMilkyCoffe(){
-        Amounts amounts = new Amounts();
-     
-        amounts.setSumCoffe(amounts.getSumCoffe()-10);
-        amounts.setSumWater(amounts.getSumWater()-50);
-        amounts.setSumSugar(amounts.getSumSugar()-8);
-        amounts.setSumMilk(amounts.getSumMilk()-100);
+    public  ArrayList<String> makeMilkyCoffe(){
+        
+        FXMLController control = new FXMLController();
+       
+        
+        ArrayList<String> adatok = control.getAmounts();
+        ArrayList<Integer> intadatok = new ArrayList<Integer>();
+        ArrayList<String> adatokreturn = new ArrayList<String>();
+        
+        for(int i=0;i<adatok.size();i++){
+            intadatok.add(Integer.parseInt(adatok.get(i)));
+        }
+        
+        intadatok.set(0,intadatok.get(0)+400);
+        intadatok.set(1,intadatok.get(1)-10);
+        intadatok.set(2,intadatok.get(2)-50);
+        intadatok.set(3,intadatok.get(3)-8);
+        intadatok.set(4,intadatok.get(4)-100);
+        
+        
+        for(int i=0;i<intadatok.size();i++){
+            adatokreturn.add(Integer.toString(intadatok.get(i)));
+        }
+        
+        return adatokreturn;
     }
+    
+        
     
     
     

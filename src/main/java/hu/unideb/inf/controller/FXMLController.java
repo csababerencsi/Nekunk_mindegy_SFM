@@ -1,6 +1,5 @@
 package hu.unideb.inf.controller;
 
-import hu.unideb.inf.Amounts;
 import hu.unideb.inf.Coffes;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -129,7 +128,7 @@ public class FXMLController {
             e.printStackTrace();
         }
 
-        Amounts amounts = new Amounts();
+       
         valueMoney.setText(adatlista.get(0));
         valueCoffee.setText(adatlista.get(1));
         valueMilk.setText(adatlista.get(2));
@@ -220,6 +219,22 @@ public class FXMLController {
     private void cappucinoBtnPush(ActionEvent event) {
         Coffes cappucino = new Coffes();
         ArrayList<String> tmp = cappucino.makeCappuccino();
+        updateFile(tmp);
+        
+    }
+    
+     @FXML
+    private void latteBtnPush(ActionEvent event) {
+        Coffes latte = new Coffes();
+        ArrayList<String> tmp = latte.makeLatte();
+        updateFile(tmp);
+        
+    }
+    
+     @FXML
+    private void milkyBtnPush(ActionEvent event) {
+        Coffes milky = new Coffes();
+        ArrayList<String> tmp = milky.makeLatte();
         updateFile(tmp);
         
     }
