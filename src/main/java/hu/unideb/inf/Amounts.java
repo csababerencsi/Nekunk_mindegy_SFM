@@ -16,12 +16,22 @@ import javafx.scene.control.Label;
  * @author Kristof
  */
 public class Amounts {
+    private int sumMoney=2000;
     private int sumCoffe=1500;
     private int sumMilk=1400;
     private int sumWater=1300;
     private int sumSugar=1200;
+
+    public int getSumMoney() {
+        return sumMoney;
+    }
+
+    public void setSumMoney(int sumMoney) {
+        this.sumMoney = sumMoney;
+    }
     
-  
+    
+    
     public int getSumCoffe() {
         return sumCoffe;
     }

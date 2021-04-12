@@ -98,6 +98,7 @@ public class FXMLController {
     
     public void startValues(){
         Amounts amounts = new Amounts();
+        valueMoney.setText(Integer.toString(amounts.getSumMoney()));
         valueCoffee.setText(Integer.toString(amounts.getSumCoffe()));
         valueMilk.setText(Integer.toString(amounts.getSumMilk()));
         valueWater.setText(Integer.toString(amounts.getSumWater()));
