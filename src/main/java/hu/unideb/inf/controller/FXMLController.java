@@ -14,6 +14,27 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class FXMLController {
+    
+    @FXML
+    private TextField regname;
+
+    @FXML
+    private TextField regmoney;
+
+    @FXML
+    private TextField regcoffee;
+
+    @FXML
+    private TextField regwater;
+
+    @FXML
+    private TextField regmilk;
+
+    @FXML
+    private TextField regsugar;
+
+    @FXML
+    private Button regbtn;
 
     @FXML
     private Button espressoBtn;
