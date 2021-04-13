@@ -8,12 +8,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.FXMLController">
    <children>
-      <TabPane>
+      <TabPane fx:id="tabs">
          <tabs>
-            <Tab text="Automata letrehozasa/torlese">
+            <Tab fx:id="creatdeltab" closable="false" text="Automata letrehozasa/torlese">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -29,13 +28,13 @@
                         <TextField fx:id="regwater" layoutX="137.0" layoutY="182.0" />
                         <TextField fx:id="regmilk" layoutX="137.0" layoutY="230.0" />
                         <TextField fx:id="regsugar" layoutX="137.0" layoutY="273.0" />
-                        <Button fx:id="regbtn" layoutX="174.0" layoutY="312.0" mnemonicParsing="false" text="Letrehozas" />
+                        <Button fx:id="regbtn" layoutX="174.0" layoutY="312.0" mnemonicParsing="false" onAction="#regbtnpush" text="Letrehozas" />
                         <Button layoutX="557.0" layoutY="59.0" mnemonicParsing="false" text="Osszes torlese" />
                      </children>
                   </AnchorPane>
               </content>
             </Tab>
-            <Tab text="Default">
+            <Tab fx:id="defaulttab" text="Default">
                <content>
                   <AnchorPane id="AnchorPane" prefHeight="571.0" prefWidth="850.0">
                      <children>

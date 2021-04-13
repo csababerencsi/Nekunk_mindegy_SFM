@@ -11,9 +11,20 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 
 public class FXMLController {
+    
+    @FXML
+    private Tab defaulttab;
+    
+    @FXML
+    private TabPane tabs;
+    
+    @FXML
+    private Tab creatdeltab;
     
     @FXML
     private TextField regname;
@@ -298,6 +309,16 @@ public class FXMLController {
         ArrayList<String> adatok = getAmounts();
         adatok.set(4,tmp);
         updateFile(adatok);
+    }
+    
+     @FXML
+    private void regbtnpush(ActionEvent event) {
+        Tab fapTab = new Tab();
+        defaulttab.getContent();
+        tabs.getTabs().add(fapTab);
+        String tmp=regname.getText();
+        fapTab.setText(tmp);
+        
     }
     
     
