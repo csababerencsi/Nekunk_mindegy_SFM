@@ -2,13 +2,15 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.FXMLController">
+<AnchorPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.FXMLController">
    <children>
       <TabPane fx:id="tabs">
          <tabs>
@@ -69,7 +71,7 @@
                         <TextField fx:id="paymentValue" layoutX="531.0" layoutY="386.0" opacity="0.0" prefHeight="25.0" prefWidth="87.0" />
                         <Label layoutX="453.0" layoutY="446.0" opacity="0.0" text="Pénzmennyiség:" />
                         <TextField fx:id="moneyAmout" layoutX="547.0" layoutY="442.0" opacity="0.0" prefHeight="25.0" prefWidth="87.0" />
-                        <Label layoutX="315.0" layoutY="38.0" prefHeight="43.0" prefWidth="221.0" text="DE-IK kávéautomata" textAlignment="CENTER">
+                        <Label fx:id="automataname" layoutX="315.0" layoutY="38.0" prefHeight="43.0" prefWidth="221.0" text="DE-IK kávéautomata" textAlignment="CENTER">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -80,6 +82,11 @@
                         <Label layoutX="144.0" layoutY="212.0" text="350Ft" />
                         <Label layoutX="129.0" layoutY="256.0" text="300Ft" />
                         <Label layoutX="144.0" layoutY="301.0" text="400Ft" />
+                        <MenuButton fx:id="chooseAutomata" layoutX="75.0" layoutY="43.0" mnemonicParsing="false" text="Válassz automatát">
+                          <items>
+                            <MenuItem fx:id="defaultautomata" mnemonicParsing="false" onAction="#switchtodefault" text="Default" />
+                          </items>
+                        </MenuButton>
                   
                                               </children>
                   </AnchorPane>

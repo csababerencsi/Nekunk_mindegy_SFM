@@ -1,6 +1,7 @@
 package hu.unideb.inf.controller;
 
 import hu.unideb.inf.Coffes;
+import hu.unideb.inf.MainApp;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -9,13 +10,31 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
 
 public class FXMLController {
+    
+    @FXML
+    private MenuItem defaultautomata;
+    
+    
+    
+    @FXML
+    private Label automataname;
+    
+    @FXML
+    private MenuButton chooseAutomata;
+
     
     @FXML
     private Tab defaulttab;
@@ -122,11 +141,13 @@ public class FXMLController {
     public Label getValueCoffee() {
         return valueCoffee;
     }
+    
+    public static String fajlnev="adatok.txt";
 
     public void startValues() {
 
         try {
-            File fajl = new File("adatok.txt");
+            File fajl = new File(fajlnev);
             if (!fajl.exists()) {
 
                 FileWriter myWriter = new FileWriter("adatok.txt");
@@ -142,7 +163,7 @@ public class FXMLController {
         ArrayList<String> adatlista = new ArrayList<String>();
         
         try {
-            File myObj = new File("adatok.txt");
+            File myObj = new File(fajlnev);
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -173,7 +194,7 @@ public class FXMLController {
         ArrayList<String> adatlista = new ArrayList<String>();
         
         try {
-            File myObj = new File("adatok.txt");
+            File myObj = new File(fajlnev);
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -203,7 +224,7 @@ public class FXMLController {
         valueSugar.setText(adatlista.get(4));
         
          try {
-            FileWriter myWriter = new FileWriter("adatok.txt");
+            FileWriter myWriter = new FileWriter(fajlnev);
             
             String tmp = String.join(" ", adatlista);
             myWriter.write(tmp);
@@ -312,15 +333,69 @@ public class FXMLController {
     }
     
      @FXML
-    private void regbtnpush(ActionEvent event) {
-        Tab fapTab = new Tab();
-        defaulttab.getContent();
-        tabs.getTabs().add(fapTab);
+    private void regbtnpush(ActionEvent event) throws IOException {
+        
         String tmp=regname.getText();
-        fapTab.setText(tmp);
+        if(tmp==""){
+            tmp="Nevtelen";
+        }
+        
+        MenuItem menuItemtmp = new MenuItem();
+        menuItemtmp.setId(tmp+"menu");
+        menuItemtmp.setText(tmp);
+        chooseAutomata.getItems().add(menuItemtmp);
+        final String tmp2=tmp;
+        menuItemtmp.setOnAction(e -> {
+                
+		changeautomata(tmp2);
+	});
+        
+        
+        ArrayList<String> adatoktofile = new ArrayList<String>();
+        
+        adatoktofile.add(regmoney.getText());
+        adatoktofile.add(regcoffee.getText());
+        adatoktofile.add(regmilk.getText());
+        adatoktofile.add(regwater.getText());
+        adatoktofile.add(regsugar.getText());
+        
+        for(int i=0;i<adatoktofile.size();i++){
+            if(adatoktofile.get(i)==""){
+                adatoktofile.set(i,"0");
+            }
+        }
+       
+        try {
+            File fajl = new File("adatok"+tmp);
+            FileWriter myWriter = new FileWriter("adatok"+tmp+".txt");
+            
+            String tofile = String.join(" ", adatoktofile);
+            myWriter.write(tofile);
+            myWriter.close();
+
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+        
         
     }
     
+    
+    public void changeautomata(String nev) {
+        automataname.setText(nev);
+        fajlnev="adatok"+nev+".txt";
+        startValues();
+        
+    }
+    
+    @FXML
+    private void switchtodefault(ActionEvent event) {
+        automataname.setText("DE-IK kávéautomata");
+        fajlnev="adatok.txt";
+        startValues();
+        
+    }
     
 
 }
