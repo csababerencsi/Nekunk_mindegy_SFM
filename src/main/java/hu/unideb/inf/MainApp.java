@@ -13,12 +13,12 @@ public class MainApp extends Application {
     public void start(Stage stage) throws Exception {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLScene.fxml"));
         Scene scene = new Scene(loader.load());
+        //Sscene.getStylesheets().addAll(this.getClass().getResource("base.css").toExternalForm());
         stage.setTitle("Kávé gép");
         stage.setScene(scene);
         stage.show();
         
     }
-
     /**
      * The main() method is ignored in correctly deployed JavaFX application.
      * main() serves only as fallback in case the application can not be
