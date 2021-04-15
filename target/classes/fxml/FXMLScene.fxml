@@ -18,7 +18,19 @@
          <tabs>
             <Tab fx:id="creatdeltab" closable="false" text="Automata létrehozása/törlése">
               <content>
+<<<<<<< Updated upstream
+                <AnchorPane fx:id="createdelpanel" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-image: coffee.jpg;" styleClass="createAutomatBg" stylesheets="@../../java/hu/unideb/inf/base.css">
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
                 <AnchorPane fx:id="automatbg" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-image: coffee.jpg;" styleClass="createAutomatBg" stylesheets="@../styles/base.css">
+=======
+                <AnchorPane fx:id="createdelpanel" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-image: coffee.jpg;" styleClass="createAutomatBg" stylesheets="@../../java/hu/unideb/inf/base.css">
+>>>>>>> 1bf06371f58cea91db2ba05f07e0d136fffe0884
+=======
+                <AnchorPane fx:id="createdelpanel" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-image: coffee.jpg;" styleClass="createAutomatBg" stylesheets="@../../java/hu/unideb/inf/base.css">
+>>>>>>> 1bf06371f58cea91db2ba05f07e0d136fffe0884
+>>>>>>> Stashed changes
                      <children>
                         <TextField fx:id="regname" layoutX="136.0" layoutY="59.0" />
                         <TextField fx:id="regmoney" layoutX="137.0" layoutY="99.0" />
@@ -44,9 +56,21 @@
                   </AnchorPane>
               </content>
             </Tab>
+<<<<<<< Updated upstream
+            <Tab fx:id="defaulttab" text="Automatak">
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
             <Tab fx:id="defaulttab" closable="false" text="Kávé Automata">
+=======
+            <Tab fx:id="defaulttab" text="Automatak">
+>>>>>>> 1bf06371f58cea91db2ba05f07e0d136fffe0884
+=======
+            <Tab fx:id="defaulttab" text="Automatak">
+>>>>>>> 1bf06371f58cea91db2ba05f07e0d136fffe0884
+>>>>>>> Stashed changes
                <content>
-                  <AnchorPane id="AnchorPane" prefHeight="571.0" prefWidth="850.0">
+                  <AnchorPane id="AnchorPane" fx:id="automatakpanel" prefHeight="571.0" prefWidth="850.0">
                      <children>
                           <Button fx:id="espressoBtn" layoutX="86.0" layoutY="184.0" mnemonicParsing="false" onAction="#espressoBtnPush" text="Espresso" />
                           <Button fx:id="cappucinoBtn" layoutX="78.0" layoutY="230.0" mnemonicParsing="false" onAction="#cappucinoBtnPush" text="Cappuccino" />
@@ -100,9 +124,9 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab text="Untitled Tab">
+            <Tab text="Karbantartas">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                <AnchorPane fx:id="karbantartpanel" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
               </content>
             </Tab>
          </tabs>
