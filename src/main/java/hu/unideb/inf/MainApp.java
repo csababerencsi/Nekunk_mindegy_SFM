@@ -13,7 +13,7 @@ public class MainApp extends Application {
     public void start(Stage stage) throws Exception {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLScene.fxml"));
         Scene scene = new Scene(loader.load());
-        //Sscene.getStylesheets().addAll(this.getClass().getResource("base.css").toExternalForm());
+        scene.getStylesheets().add("/styles/base.css");
         stage.setTitle("Kávé gép");
         stage.setScene(scene);
         stage.show();

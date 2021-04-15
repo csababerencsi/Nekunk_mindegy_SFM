@@ -20,9 +20,13 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 
 public class FXMLController {
+    
+    @FXML
+    private AnchorPane pane0;
     
     @FXML
     private MenuItem defaultautomata;
@@ -396,6 +400,7 @@ public class FXMLController {
         startValues();
         
     }
+    
     
 
 }

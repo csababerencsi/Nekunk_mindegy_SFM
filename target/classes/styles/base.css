@@ -8,7 +8,11 @@ and open the template in the editor.
     Author     : csaba
 */
 
-.createAutomatBg {
-    -fx-background-image: url('Nekunk_mindegy_SFM\img\coffee.jpg');
+#pane0{
+    -fx-background-image: url('/imgs/coffee.jpg');
     -fx-background-size: 100% 100%;
+}
+.button {
+    -fx-font-weight: bold;
+    
 }
