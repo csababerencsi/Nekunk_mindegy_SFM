@@ -26,6 +26,15 @@ import javafx.scene.layout.StackPane;
 public class FXMLController {
     
     @FXML
+    private AnchorPane karbantartpanel;
+    
+    @FXML
+    private AnchorPane automatakpanel;
+    
+    @FXML
+    private AnchorPane createdelpanel;
+    
+    @FXML
     private AnchorPane pane0;
     
     @FXML
