@@ -29,7 +29,7 @@ public class Coffes {
             intadatok.add(Integer.parseInt(adatok.get(i)));
         }
         
-        intadatok.set(0,intadatok.get(0)+250);
+        intadatok.set(0,intadatok.get(0)-250);
         intadatok.set(1,intadatok.get(1)-14);
         intadatok.set(2,intadatok.get(2)-0);
         intadatok.set(3,intadatok.get(3)-60);
@@ -57,7 +57,7 @@ public class Coffes {
             intadatok.add(Integer.parseInt(adatok.get(i)));
         }
         
-        intadatok.set(0,intadatok.get(0)+350);
+        intadatok.set(0,intadatok.get(0)-350);
         intadatok.set(1,intadatok.get(1)-7);
         intadatok.set(2,intadatok.get(2)-30);
         intadatok.set(3,intadatok.get(3)-8);
@@ -87,7 +87,7 @@ public class Coffes {
             intadatok.add(Integer.parseInt(adatok.get(i)));
         }
         
-        intadatok.set(0,intadatok.get(0)+300);
+        intadatok.set(0,intadatok.get(0)-300);
         intadatok.set(1,intadatok.get(1)-14);
         intadatok.set(2,intadatok.get(2)-60);
         intadatok.set(3,intadatok.get(3)-8);
@@ -114,7 +114,7 @@ public class Coffes {
             intadatok.add(Integer.parseInt(adatok.get(i)));
         }
         
-        intadatok.set(0,intadatok.get(0)+400);
+        intadatok.set(0,intadatok.get(0)-400);
         intadatok.set(1,intadatok.get(1)-10);
         intadatok.set(2,intadatok.get(2)-50);
         intadatok.set(3,intadatok.get(3)-8);

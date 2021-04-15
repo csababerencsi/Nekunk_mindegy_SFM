@@ -40,14 +40,17 @@ public class FXMLController {
     @FXML
     private MenuItem defaultautomata;
     
-    
+    @FXML
+    private Button delallbtn;
     
     @FXML
     private Label automataname;
     
     @FXML
     private MenuButton chooseAutomata;
-
+    
+     @FXML
+    private AnchorPane automatbg;
     
     @FXML
     private Tab defaulttab;
@@ -254,7 +257,7 @@ public class FXMLController {
     public void resetFile(){
         
         ArrayList<String> adatlista = new ArrayList<>();
-        adatlista.add("0");
+        adatlista.add("200000");
         adatlista.add("10000");
         adatlista.add("10000");
         adatlista.add("10000");

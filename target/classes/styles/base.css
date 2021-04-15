@@ -12,7 +12,51 @@ and open the template in the editor.
     -fx-background-image: url('/imgs/coffee.jpg');
     -fx-background-size: 100% 100%;
 }
-.button {
+.button{
     -fx-font-weight: bold;
+    -fx-font-style: italic;
     
+}
+
+#regname, #regmoney, #regcoffee, #regwater, #regmilk, #regsugar {
+    -fx-border-color: grey;
+}
+#regname:hover, #regmoney:hover, #regcoffee:hover, #regwater:hover, #regmilk:hover, #regsugar:hover{
+    -fx-border-color: lightcoral;
+}
+#regname:active, #regmoney:active, #regcoffee:active, #regwater:active, #regmilk:active, #regsugar:active{
+    -fx-border-color: blue;
+}
+#regbtn, #delallbtn {
+    -fx-background-color: lightgrey;
+    -fx-border-color: lightgrey;
+}
+#regbtn:hover {
+    -fx-border-color: lime;
+}
+#delallbtn:hover {
+    -fx-border-color: red;
+}
+#creatdeltab:focus ,#defaulttab:focus {
+    -fx-border-color: lawngreen;
+}
+#creatdeltab:hover,#defaulttab:hover {
+    -fx-border-color: lawngreen;
+    -fx-border-bottom: none;
+}
+
+#espressoBtn, #cappucinoBtn, #latteBtn, #milkyCoffeeBtn {
+    -fx-font-weight: italic;
+}
+#espressoBtn:hover, #cappucinoBtn:hover, #latteBtn:hover, #milkyCoffeeBtn:hover {
+    -fx-border-color: lightcoral;
+}
+#startButton:hover, #saveMoney:hover, #saveCoffee:hover, #saveWater:hover, #saveMilk:hover, #saveSugar:hover {
+    -fx-border-color: lime;
+}
+#resetButton:hover {
+    -fx-border-color: orange;
+}
+#inputMoney:hover, #inputCoffee:hover, #inputWater:hover, #inputMilk:hover, #inputSugar:hover{
+    -fx-border-color: lightcoral;
 }
