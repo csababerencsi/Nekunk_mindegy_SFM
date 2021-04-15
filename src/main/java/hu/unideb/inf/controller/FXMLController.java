@@ -146,17 +146,15 @@ public class FXMLController {
     @FXML
     private TextField moneyAmout;
 
-    @FXML
-    private Button startButton;
     
-    @FXML
-    private Button resetButton;
-
     public Label getValueCoffee() {
         return valueCoffee;
     }
     
-    
+    @FXML
+    public void initialize() {
+        startValues();
+    }
 
     public void startValues() {
         
@@ -185,18 +183,7 @@ public class FXMLController {
     }
     
    
-
-    @FXML
-    private void startButtonPushed(ActionEvent event) {
-        startValues();
-    }
     
-    @FXML
-    private void resetButtonPushed(ActionEvent event) {
-        String nev= automataname.getText();
-        Fajlkezelo f = new Fajlkezelo();
-        f.resetFile(nev);
-    }
 
     @FXML
     private void espressoBtnPush(ActionEvent event) {

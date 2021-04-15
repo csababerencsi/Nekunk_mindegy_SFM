@@ -24,11 +24,13 @@ public class Fajlkezelo {
     public void resetFile(String nev){
         
         ArrayList<String> adatlista = new ArrayList<>();
+        adatlista.add(nev);
         adatlista.add("0");
         adatlista.add("10000");
         adatlista.add("10000");
         adatlista.add("10000");
         adatlista.add("10000");
+        
         
         ArrayList< ArrayList<String>> records = new ArrayList< ArrayList<String>>();
         records.add(adatlista);

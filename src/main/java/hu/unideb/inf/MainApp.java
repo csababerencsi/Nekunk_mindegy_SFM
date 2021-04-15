@@ -1,5 +1,6 @@
 package hu.unideb.inf;
 
+import hu.unideb.inf.controller.FXMLController;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +18,7 @@ public class MainApp extends Application {
         stage.setTitle("Kávé gép");
         stage.setScene(scene);
         stage.show();
+        
         
     }
     /**

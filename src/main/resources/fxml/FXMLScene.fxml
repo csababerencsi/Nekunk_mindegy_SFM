@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.FXMLController">
+<AnchorPane fx:id="pane0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.FXMLController">
    <children>
       <TabPane fx:id="tabs">
          <tabs>
@@ -48,7 +48,7 @@
               </content>
             </Tab>
 
-            <Tab fx:id="defaulttab" text="Automatak">
+            <Tab fx:id="defaulttab" closable="false" text="Automatak">
 
 
                <content>
@@ -90,15 +90,13 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Button fx:id="startButton" layoutX="65.0" layoutY="501.0" mnemonicParsing="false" onAction="#startButtonPushed" text="Start" />
-                        <Button fx:id="resetButton" layoutX="136.0" layoutY="501.0" mnemonicParsing="false" onAction="#resetButtonPushed" text="Reset" />
                         <Label layoutX="157.0" layoutY="188.0" text="250Ft" />
                         <Label layoutX="165.0" layoutY="234.0" text="350Ft" />
                         <Label layoutX="150.0" layoutY="278.0" text="300Ft" />
                         <Label layoutX="165.0" layoutY="323.0" text="400Ft" />
                         <MenuButton fx:id="chooseAutomata" layoutX="72.0" layoutY="47.0" mnemonicParsing="false" text="Válassz automatát!">
                           <items>
-                            <MenuItem fx:id="defaultautomata" mnemonicParsing="false" onAction="#switchtodefault" text="Default" />
+                            <MenuItem fx:id="defaultautomata" mnemonicParsing="false" onAction="#switchtodefault" text="Default" visible="false" />
                           </items>
                         </MenuButton>
                   
@@ -106,7 +104,7 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab text="Karbantartas">
+            <Tab closable="false" text="Karbantartas">
               <content>
                 <AnchorPane fx:id="karbantartpanel" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
               </content>
