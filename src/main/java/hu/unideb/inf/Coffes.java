@@ -5,7 +5,6 @@
  */
 package hu.unideb.inf;
 
-import hu.unideb.inf.controller.FXMLController;
 import java.util.ArrayList;
 
 /**
@@ -15,19 +14,17 @@ import java.util.ArrayList;
 public class Coffes {
     
     
-    public ArrayList<String> makeEspresso(){
+    public ArrayList<String> makeEspresso(ArrayList<String> adatok){
         
-        FXMLController control = new FXMLController();
         
-
-        
-        ArrayList<String> adatok = control.getAmounts();
         ArrayList<Integer> intadatok = new ArrayList<Integer>();
         ArrayList<String> adatokreturn = new ArrayList<String>();
         
-        for(int i=0;i<adatok.size();i++){
+        for(int i=1;i<adatok.size();i++){
             intadatok.add(Integer.parseInt(adatok.get(i)));
         }
+        
+        
         
         intadatok.set(0,intadatok.get(0)+250);
         intadatok.set(1,intadatok.get(1)-14);
@@ -36,24 +33,25 @@ public class Coffes {
         intadatok.set(4,intadatok.get(4)-8);
         
         
+        
+        adatokreturn.add(adatok.get(0));
+        
         for(int i=0;i<intadatok.size();i++){
             adatokreturn.add(Integer.toString(intadatok.get(i)));
         }
         
+        
+        
         return adatokreturn;
     }
     
-    public ArrayList<String> makeCappuccino(){
+    public ArrayList<String> makeCappuccino(ArrayList<String> adatok){
         
-        FXMLController control = new FXMLController();
         
-       
-        
-        ArrayList<String> adatok = control.getAmounts();
         ArrayList<Integer> intadatok = new ArrayList<Integer>();
         ArrayList<String> adatokreturn = new ArrayList<String>();
         
-        for(int i=0;i<adatok.size();i++){
+        for(int i=1;i<adatok.size();i++){
             intadatok.add(Integer.parseInt(adatok.get(i)));
         }
         
@@ -63,6 +61,7 @@ public class Coffes {
         intadatok.set(3,intadatok.get(3)-8);
         intadatok.set(4,intadatok.get(4)-85);
         
+        adatokreturn.add(adatok.get(0));
         
         for(int i=0;i<intadatok.size();i++){
             adatokreturn.add(Integer.toString(intadatok.get(i)));
@@ -72,18 +71,13 @@ public class Coffes {
         
     }
     
-    public ArrayList<String> makeLatte(){
+    public ArrayList<String> makeLatte(ArrayList<String> adatok){
        
         
-        FXMLController control = new FXMLController();
-        
-
-        
-        ArrayList<String> adatok = control.getAmounts();
         ArrayList<Integer> intadatok = new ArrayList<Integer>();
         ArrayList<String> adatokreturn = new ArrayList<String>();
         
-        for(int i=0;i<adatok.size();i++){
+        for(int i=1;i<adatok.size();i++){
             intadatok.add(Integer.parseInt(adatok.get(i)));
         }
         
@@ -93,6 +87,7 @@ public class Coffes {
         intadatok.set(3,intadatok.get(3)-8);
         intadatok.set(4,intadatok.get(4)-90);
         
+        adatokreturn.add(adatok.get(0));
         
         for(int i=0;i<intadatok.size();i++){
             adatokreturn.add(Integer.toString(intadatok.get(i)));
@@ -101,16 +96,12 @@ public class Coffes {
         return adatokreturn;
     }
     
-    public  ArrayList<String> makeMilkyCoffe(){
+    public  ArrayList<String> makeMilkyCoffe(ArrayList<String> adatok){
         
-        FXMLController control = new FXMLController();
-       
-        
-        ArrayList<String> adatok = control.getAmounts();
         ArrayList<Integer> intadatok = new ArrayList<Integer>();
         ArrayList<String> adatokreturn = new ArrayList<String>();
         
-        for(int i=0;i<adatok.size();i++){
+        for(int i=1;i<adatok.size();i++){
             intadatok.add(Integer.parseInt(adatok.get(i)));
         }
         
@@ -120,6 +111,7 @@ public class Coffes {
         intadatok.set(3,intadatok.get(3)-8);
         intadatok.set(4,intadatok.get(4)-100);
         
+        adatokreturn.add(adatok.get(0));
         
         for(int i=0;i<intadatok.size();i++){
             adatokreturn.add(Integer.toString(intadatok.get(i)));

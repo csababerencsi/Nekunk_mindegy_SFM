@@ -1,6 +1,7 @@
 package hu.unideb.inf.controller;
 
 import hu.unideb.inf.Coffes;
+import hu.unideb.inf.Fajlkezelo;
 import hu.unideb.inf.MainApp;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -155,114 +156,36 @@ public class FXMLController {
         return valueCoffee;
     }
     
-    public static String fajlnev="adatok.txt";
+    
 
     public void startValues() {
-
-        try {
-            File fajl = new File(fajlnev);
-            if (!fajl.exists()) {
-
-                FileWriter myWriter = new FileWriter("adatok.txt");
-                myWriter.write("2000 1500 1400 1300 1200");
-                myWriter.close();
-
-            }
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
         
-        ArrayList<String> adatlista = new ArrayList<String>();
-        
-        try {
-            File myObj = new File(fajlnev);
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                String[] szamok = data.split(" ");
-                
-                for(int i=0;i<szamok.length;i++){
-                    adatlista.add(szamok[i]);
-                }
-                
-               
-            }
-            myReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-
-       
-        valueMoney.setText(adatlista.get(0));
-        valueCoffee.setText(adatlista.get(1));
-        valueMilk.setText(adatlista.get(2));
-        valueWater.setText(adatlista.get(3));
-        valueSugar.setText(adatlista.get(4));
-    }
-    
-    public ArrayList<String> getAmounts(){
-        
-        ArrayList<String> adatlista = new ArrayList<String>();
-        
-        try {
-            File myObj = new File(fajlnev);
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                String[] szamok = data.split(" ");
-                
-                for(int i=0;i<szamok.length;i++){
-                    adatlista.add(szamok[i]);
-                }
-                
-               
-            }
-            myReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-        
-        return adatlista;
-    }
-
-    public void updateFile(ArrayList<String> adatlista){
-        
-        valueMoney.setText(adatlista.get(0));
-        valueCoffee.setText(adatlista.get(1));
-        valueMilk.setText(adatlista.get(2));
-        valueWater.setText(adatlista.get(3));
-        valueSugar.setText(adatlista.get(4));
-        
-         try {
-            FileWriter myWriter = new FileWriter(fajlnev);
+        Fajlkezelo f = new Fajlkezelo();
+        ArrayList< ArrayList<String>> records = f.readFile();
+         
+        for(var automata:records){
+            String tmp = automata.get(0);
             
-            String tmp = String.join(" ", adatlista);
-            myWriter.write(tmp);
-            myWriter.close();
+            MenuItem menuItemtmp = new MenuItem();
+            menuItemtmp.setId(tmp+"menu");
+            menuItemtmp.setText(tmp);
             
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
+            if(!(chooseAutomata.getItems().contains(menuItemtmp))){
+                chooseAutomata.getItems().add(menuItemtmp);
+                final String tmp2=tmp;
+                menuItemtmp.setOnAction(e -> {
+                    changeautomata(tmp2);
+                });
+            }
+            
+            
+            
         }
         
-        
     }
     
-    public void resetFile(){
-        
-        ArrayList<String> adatlista = new ArrayList<>();
-        adatlista.add("0");
-        adatlista.add("10000");
-        adatlista.add("10000");
-        adatlista.add("10000");
-        adatlista.add("10000");
-        
-        updateFile(adatlista);
-    }
-    
+   
+
     @FXML
     private void startButtonPushed(ActionEvent event) {
         startValues();
@@ -270,82 +193,74 @@ public class FXMLController {
     
     @FXML
     private void resetButtonPushed(ActionEvent event) {
-        resetFile();
+        String nev= automataname.getText();
+        Fajlkezelo f = new Fajlkezelo();
+        f.resetFile(nev);
     }
 
     @FXML
     private void espressoBtnPush(ActionEvent event) {
-        Coffes espresso = new Coffes();
-        ArrayList<String> tmp = espresso.makeEspresso();
-        updateFile(tmp);
+        coffeButtonHandler("espresso");
         
     }
     
     @FXML
     private void cappucinoBtnPush(ActionEvent event) {
-        Coffes cappucino = new Coffes();
-        ArrayList<String> tmp = cappucino.makeCappuccino();
-        updateFile(tmp);
+        coffeButtonHandler("cappuccino");
         
     }
     
      @FXML
     private void latteBtnPush(ActionEvent event) {
-        Coffes latte = new Coffes();
-        ArrayList<String> tmp = latte.makeLatte();
-        updateFile(tmp);
+        coffeButtonHandler("latte");
         
     }
     
      @FXML
     private void milkyBtnPush(ActionEvent event) {
-        Coffes milky = new Coffes();
-        ArrayList<String> tmp = milky.makeMilkyCoffe();
-        updateFile(tmp);
-        
+        coffeButtonHandler("milkycoffe");
     }
     
      @FXML
     private void saveMoneyBtnPush(ActionEvent event) {
-        String tmp=inputMoney.getText();
-        ArrayList<String> adatok = getAmounts();
-        adatok.set(0,tmp);
-        updateFile(adatok);
+        String nev= automataname.getText();
+        String value=inputMoney.getText();
+        int itemIndex=1;
+        saveButtonHandler(nev,value,itemIndex);
     }
     
      @FXML
     private void saveCoffeeBtnPush(ActionEvent event) {
-        String tmp=inputCoffee.getText();
-        ArrayList<String> adatok = getAmounts();
-        adatok.set(1,tmp);
-        updateFile(adatok);
+        String nev= automataname.getText();
+        String value=inputCoffee.getText();
+        int itemIndex=2;
+        saveButtonHandler(nev,value,itemIndex);
     }
     
      @FXML
     private void saveWaterBtnPush(ActionEvent event) {
-        String tmp=inputWater.getText();
-        ArrayList<String> adatok = getAmounts();
-        adatok.set(3,tmp);
-        updateFile(adatok);
+        String nev= automataname.getText();
+        String value=inputWater.getText();
+        int itemIndex=3;
+        saveButtonHandler(nev,value,itemIndex);
     }
     
      @FXML
     private void saveMilkBtnPush(ActionEvent event) {
-        String tmp=inputMilk.getText();
-        ArrayList<String> adatok = getAmounts();
-        adatok.set(2,tmp);
-        updateFile(adatok);
+        String nev= automataname.getText();
+        String value=inputMilk.getText();
+        int itemIndex=4;
+        saveButtonHandler(nev,value,itemIndex);
     }
     
      @FXML
     private void saveSugarBtnPush(ActionEvent event) {
-        String tmp=inputSugar.getText();
-        ArrayList<String> adatok = getAmounts();
-        adatok.set(4,tmp);
-        updateFile(adatok);
+        String nev= automataname.getText();
+        String value=inputSugar.getText();
+        int itemIndex=5;
+        saveButtonHandler(nev,value,itemIndex);
     }
-    
-     @FXML
+      @FXML
     private void regbtnpush(ActionEvent event) throws IOException {
         
         String tmp=regname.getText();
@@ -363,51 +278,114 @@ public class FXMLController {
 		changeautomata(tmp2);
 	});
         
+        ArrayList<String> adatoktofile2 = new ArrayList<String>();
+        adatoktofile2.add(regname.getText());
+        adatoktofile2.add(regmoney.getText());
+        adatoktofile2.add(regcoffee.getText());
+        adatoktofile2.add(regwater.getText());
+        adatoktofile2.add(regmilk.getText());
+        adatoktofile2.add(regsugar.getText());
         
-        ArrayList<String> adatoktofile = new ArrayList<String>();
+        ArrayList<ArrayList<String>> nagyadatoktofile2 = new ArrayList<ArrayList<String>>();
+        nagyadatoktofile2.add(adatoktofile2);
         
-        adatoktofile.add(regmoney.getText());
-        adatoktofile.add(regcoffee.getText());
-        adatoktofile.add(regmilk.getText());
-        adatoktofile.add(regwater.getText());
-        adatoktofile.add(regsugar.getText());
-        
-        for(int i=0;i<adatoktofile.size();i++){
-            if(adatoktofile.get(i)==""){
-                adatoktofile.set(i,"0");
-            }
-        }
-       
-        try {
-            File fajl = new File("adatok"+tmp);
-            FileWriter myWriter = new FileWriter("adatok"+tmp+".txt");
-            
-            String tofile = String.join(" ", adatoktofile);
-            myWriter.write(tofile);
-            myWriter.close();
+        Fajlkezelo fajlok = new Fajlkezelo();
+        fajlok.updateFile(nagyadatoktofile2);
 
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-        
-        
     }
     
     
     public void changeautomata(String nev) {
-        automataname.setText(nev);
-        fajlnev="adatok"+nev+".txt";
-        startValues();
-        
+        Fajlkezelo f = new Fajlkezelo();
+        ArrayList<String> adatlista=f.automataSelector(nev);
+        labelSwitcher(nev);
     }
     
     @FXML
     private void switchtodefault(ActionEvent event) {
-        automataname.setText("DE-IK kávéautomata");
-        fajlnev="adatok.txt";
-        startValues();
+        String nev="DE-IK kaveautomata";
+        labelSwitcher(nev);
+    }
+    
+    
+    public void labelSwitcher(String nev) {
+        Fajlkezelo f = new Fajlkezelo();
+        ArrayList<String> adatlista=f.automataSelector(nev);
         
+        automataname.setText(adatlista.get(0));
+        valueMoney.setText(adatlista.get(1));
+        valueCoffee.setText(adatlista.get(2));
+        valueWater.setText(adatlista.get(3));
+        valueMilk.setText(adatlista.get(4));
+        valueSugar.setText(adatlista.get(5));
+    }
+    
+    public void saveButtonHandler(String nev,String value,int itemIndex) {
+        Fajlkezelo f= new Fajlkezelo();
+        
+        ArrayList<String> adatok = f.automataSelector(nev);
+        adatok.set(itemIndex,value);
+        
+        f.automataDel(nev);
+        
+        ArrayList<ArrayList<String>> nagyadatoktofile2 = new ArrayList<ArrayList<String>>();
+        nagyadatoktofile2.add(adatok);
+        
+        Fajlkezelo fajlok = new Fajlkezelo();
+        fajlok.updateFile(nagyadatoktofile2);
+        
+        
+        
+        automataname.setText(adatok.get(0));
+        valueMoney.setText(adatok.get(1));
+        valueCoffee.setText(adatok.get(2));
+        valueWater.setText(adatok.get(3));
+        valueMilk.setText(adatok.get(4));
+        valueSugar.setText(adatok.get(5));
+    }
+    
+    public void coffeButtonHandler(String type){
+        
+        Coffes coffees = new Coffes();
+        Fajlkezelo f = new Fajlkezelo();
+        String nev= automataname.getText();
+        ArrayList<String> adatlista=f.automataSelector(nev);
+        
+        switch(type){
+            case "espresso":{
+                adatlista=coffees.makeEspresso(adatlista);
+               break;
+            }
+            case "cappuccino":{
+                adatlista=coffees.makeCappuccino(adatlista);
+                break;
+            }
+            case "latte":{
+                adatlista=coffees.makeLatte(adatlista);
+                break;
+            }
+            case "milkycoffe":{
+                adatlista=coffees.makeMilkyCoffe(adatlista);
+                break;
+            }
+            default:
+                break;
+        }
+        
+        
+        
+        f.automataDel(nev);
+        
+        ArrayList<ArrayList<String>> nagyadatoktofile2 = new ArrayList<ArrayList<String>>();
+        nagyadatoktofile2.add(adatlista);
+        f.updateFile(nagyadatoktofile2);
+       
+        
+        valueMoney.setText(adatlista.get(1));
+        valueCoffee.setText(adatlista.get(2));
+        valueWater.setText(adatlista.get(3));
+        valueMilk.setText(adatlista.get(4));
+        valueSugar.setText(adatlista.get(5));
     }
     
     

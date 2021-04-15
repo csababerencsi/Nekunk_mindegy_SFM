@@ -18,7 +18,7 @@
          <tabs>
             <Tab fx:id="creatdeltab" closable="false" text="Automata létrehozása/törlése">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-image: coffee.jpg;" styleClass="createAutomatBg" stylesheets="@../../java/hu/unideb/inf/base.css">
+                <AnchorPane fx:id="createdelpanel" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-image: coffee.jpg;" styleClass="createAutomatBg" stylesheets="@../../java/hu/unideb/inf/base.css">
                      <children>
                         <TextField fx:id="regname" layoutX="136.0" layoutY="59.0" />
                         <TextField fx:id="regmoney" layoutX="137.0" layoutY="99.0" />
@@ -44,9 +44,9 @@
                   </AnchorPane>
               </content>
             </Tab>
-            <Tab fx:id="defaulttab" text="Default">
+            <Tab fx:id="defaulttab" text="Automatak">
                <content>
-                  <AnchorPane id="AnchorPane" prefHeight="571.0" prefWidth="850.0">
+                  <AnchorPane id="AnchorPane" fx:id="automatakpanel" prefHeight="571.0" prefWidth="850.0">
                      <children>
                           <Button fx:id="espressoBtn" layoutX="65.0" layoutY="162.0" mnemonicParsing="false" onAction="#espressoBtnPush" text="Espresso" />
                           <Button fx:id="cappucinoBtn" layoutX="57.0" layoutY="208.0" mnemonicParsing="false" onAction="#cappucinoBtnPush" text="Cappuccino" />
@@ -79,7 +79,7 @@
                         <TextField fx:id="paymentValue" layoutX="531.0" layoutY="386.0" opacity="0.0" prefHeight="25.0" prefWidth="87.0" />
                         <Label layoutX="453.0" layoutY="446.0" opacity="0.0" text="Pénzmennyiség:" />
                         <TextField fx:id="moneyAmout" layoutX="547.0" layoutY="442.0" opacity="0.0" prefHeight="25.0" prefWidth="87.0" />
-                        <Label fx:id="automataname" layoutX="315.0" layoutY="38.0" prefHeight="43.0" prefWidth="221.0" text="DE-IK kávéautomata" textAlignment="CENTER">
+                        <Label fx:id="automataname" layoutX="315.0" layoutY="38.0" prefHeight="43.0" prefWidth="221.0" text="Válassz automatát!" textAlignment="CENTER">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -100,9 +100,9 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab text="Untitled Tab">
+            <Tab text="Karbantartas">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                <AnchorPane fx:id="karbantartpanel" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
               </content>
             </Tab>
          </tabs>

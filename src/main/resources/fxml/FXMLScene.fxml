@@ -79,7 +79,7 @@
                         <TextField fx:id="paymentValue" layoutX="531.0" layoutY="386.0" opacity="0.0" prefHeight="25.0" prefWidth="87.0" />
                         <Label layoutX="453.0" layoutY="446.0" opacity="0.0" text="Pénzmennyiség:" />
                         <TextField fx:id="moneyAmout" layoutX="547.0" layoutY="442.0" opacity="0.0" prefHeight="25.0" prefWidth="87.0" />
-                        <Label fx:id="automataname" layoutX="315.0" layoutY="38.0" prefHeight="43.0" prefWidth="221.0" text="DE-IK kávéautomata" textAlignment="CENTER">
+                        <Label fx:id="automataname" layoutX="315.0" layoutY="38.0" prefHeight="43.0" prefWidth="221.0" text="Válassz automatát!" textAlignment="CENTER">
                            <font>
                               <Font size="24.0" />
                            </font>
