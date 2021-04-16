@@ -145,6 +145,25 @@ public class FXMLController {
 
     @FXML
     private TextField moneyAmout;
+    
+    @FXML
+    private Label automatacounter;
+    
+    @FXML
+    private Label sumMoney;
+    
+    @FXML
+    private Label sumCoffee;
+    
+    @FXML
+    private Label sumMilk;
+    
+    @FXML
+    private Label sumSugar;
+    
+    @FXML
+    private Label sumWater;
+    
 
     
     public Label getValueCoffee() {
@@ -286,6 +305,7 @@ public class FXMLController {
         
        Fajlkezelo file=new Fajlkezelo();
        file.automataDelAll();
+       
     }
     
     
