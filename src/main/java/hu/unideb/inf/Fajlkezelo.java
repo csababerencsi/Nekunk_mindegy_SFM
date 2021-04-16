@@ -67,6 +67,23 @@ public class Fajlkezelo {
         
     }
     
+    public ArrayList<String> menus()
+    {
+       ArrayList<ArrayList<String>> adatlista=readFile();
+        ArrayList<String> nevek=new ArrayList<>();
+        for (var sor:adatlista){
+        {
+            for (var elem:sor)
+            {
+                nevek.add(elem.toString());
+                break;
+            }
+        }
+         
+    }
+        return nevek;
+    }
+    
     public ArrayList<String> automataSelector(String name){
         ArrayList<ArrayList<String>> adatlista=readFile();
         ArrayList<String> returnlist=new ArrayList<>();

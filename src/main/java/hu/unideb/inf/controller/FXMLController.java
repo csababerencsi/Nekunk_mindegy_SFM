@@ -305,6 +305,20 @@ public class FXMLController {
         
        Fajlkezelo file=new Fajlkezelo();
        file.automataDelAll();
+       ArrayList<String> menu=new ArrayList();
+       menu=file.menus();
+        System.out.println(menu);
+       for(String tmp:menu)
+       {
+           MenuItem menuItemtmp = new MenuItem();
+           menuItemtmp.setId(tmp+"menu");
+           menuItemtmp.setText(tmp);
+            if((chooseAutomata.getItems().contains(menuItemtmp)))
+            {
+                menuItemtmp.setVisible(false);
+            }
+            
+       }
        
     }
     

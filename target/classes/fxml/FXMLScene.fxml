@@ -116,10 +116,10 @@
                         <Label layoutX="84.0" layoutY="179.0" text="Össz cukor:" />
                         <Label layoutX="84.0" layoutY="203.0" text="Össz víz:" />
                         <Label fx:id="sumMoney" layoutX="154.0" layoutY="92.0" text="Label" />
-                        <Label fx:id="sumCoffee" layoutX="154.0" layoutY="123.0" text="Label" />
-                        <Label fx:id="sumMilk" layoutX="140.0" layoutY="152.0" text="Label" />
-                        <Label fx:id="sumSugar" layoutX="154.0" layoutY="179.0" text="Label" />
-                        <Label fx:id="sumWater" layoutX="131.0" layoutY="203.0" text="Label" />
+                        <Label fx:id="sumCoffee" layoutX="159.0" layoutY="123.0" text="Label" />
+                        <Label fx:id="sumMilk" layoutX="159.0" layoutY="152.0" text="Label" />
+                        <Label fx:id="sumSugar" layoutX="159.0" layoutY="179.0" text="Label" />
+                        <Label fx:id="sumWater" layoutX="159.0" layoutY="203.0" text="Label" />
                      </children></AnchorPane>
               </content>
             </Tab>
