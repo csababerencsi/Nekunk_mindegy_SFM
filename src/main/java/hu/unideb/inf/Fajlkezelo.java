@@ -48,6 +48,24 @@ public class Fajlkezelo {
         createFile(adatlista);
     }
     
+    public  void automataDelAll ()
+    {
+        ArrayList<ArrayList<String>> adatlista=readFile();
+        ArrayList<String> nevek=new ArrayList<>();
+        for (var sor:adatlista){
+        {
+            for (var elem:sor)
+            {
+                nevek.add(elem.toString());
+                break;
+            }
+        }
+     
+        }
+        for (String item:nevek)
+            automataDel(item);
+        
+    }
     
     public ArrayList<String> automataSelector(String name){
         ArrayList<ArrayList<String>> adatlista=readFile();

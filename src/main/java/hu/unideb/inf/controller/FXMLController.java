@@ -281,6 +281,13 @@ public class FXMLController {
 
     }
     
+    @FXML
+    private void delbtnpush(ActionEvent event) {
+        
+       Fajlkezelo file=new Fajlkezelo();
+       file.automataDelAll();
+    }
+    
     
     public void changeautomata(String nev) {
         Fajlkezelo f = new Fajlkezelo();

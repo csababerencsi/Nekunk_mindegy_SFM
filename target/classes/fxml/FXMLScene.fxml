@@ -36,7 +36,7 @@
                         <TextField fx:id="regmilk" layoutX="137.0" layoutY="230.0" />
                         <TextField fx:id="regsugar" layoutX="137.0" layoutY="273.0" />
                         <Button fx:id="regbtn" layoutX="174.0" layoutY="312.0" mnemonicParsing="false" onAction="#regbtnpush" stylesheets="@../styles/base.css" text="Létrehozás" />
-                        <Button fx:id="delallbtn" layoutX="524.0" layoutY="142.0" mnemonicParsing="false" stylesheets="@../styles/base.css" text="Összes automata törlése" textAlignment="CENTER">
+                        <Button fx:id="delallbtn" layoutX="524.0" layoutY="142.0" mnemonicParsing="false" onAction="#delbtnpush" stylesheets="@../styles/base.css" text="Összes automata törlése" textAlignment="CENTER">
                            <cursor>
                               <Cursor fx:constant="DEFAULT" />
                            </cursor>
@@ -104,7 +104,7 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab closable="false" text="Karbantartas">
+            <Tab closable="false" text="Statisztika">
               <content>
                 <AnchorPane fx:id="karbantartpanel" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
               </content>
