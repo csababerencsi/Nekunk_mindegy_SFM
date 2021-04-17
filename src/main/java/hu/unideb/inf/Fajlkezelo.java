@@ -131,6 +131,38 @@ public class Fajlkezelo {
         return records;
         
     }
+    public ArrayList<Integer> statpage()
+    {
+        ArrayList<ArrayList<String>> adatlista=readFile();
+        ArrayList<Integer> stat=new ArrayList();
+        int counter=0,kave=0,tej=0,cukor=0,viz=0,penz=0;
+        for (var sor:adatlista)
+        {
+            counter++;
+            for (int i=1;i<=adatlista.size();i++)
+            {
+                if (i==1)
+                    penz=penz+Integer.parseInt(sor.get(i));
+                if (i==2)
+                    kave=kave+Integer.parseInt(sor.get(i));
+                if (i==3)
+                    viz=viz+Integer.parseInt(sor.get(i));
+                if (i==4)
+                    tej=tej+Integer.parseInt(sor.get(i));
+                if (i==5)
+                    cukor=cukor+Integer.parseInt(sor.get(i));
+
+            }
+        }
+        stat.add(counter);
+        stat.add(penz);
+        stat.add(kave);
+        stat.add(viz);
+        stat.add(tej);
+        stat.add(cukor);
+        
+        return stat;
+    }
     
     public void updateFile(ArrayList<ArrayList<String>> adatlista){
         

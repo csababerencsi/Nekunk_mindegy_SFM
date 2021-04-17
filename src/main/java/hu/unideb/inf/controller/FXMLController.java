@@ -136,6 +136,8 @@ public class FXMLController {
 
     @FXML
     private Button saveSugar;
+    
+    @FXML Button refreshstat;
 
     @FXML
     private TextField changeValue;
@@ -202,7 +204,20 @@ public class FXMLController {
     }
     
    
-    
+    @FXML
+    private void refreshstatBtnPush(ActionEvent event)
+    {
+        Fajlkezelo f=new Fajlkezelo();
+         ArrayList<Integer> statok=new ArrayList();
+            statok=f.statpage();
+            valueMoney.setText("0");
+            automatacounter.setText(statok.get(0).toString());
+            sumMoney.setText(statok.get(1).toString());
+            sumCoffee.setText(statok.get(2).toString());
+            sumMilk.setText(statok.get(4).toString());
+            sumSugar.setText(statok.get(5).toString());
+            sumWater.setText(statok.get(3).toString());
+    }
 
     @FXML
     private void espressoBtnPush(ActionEvent event) {
