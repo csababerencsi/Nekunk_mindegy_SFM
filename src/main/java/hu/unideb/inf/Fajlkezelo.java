@@ -139,7 +139,7 @@ public class Fajlkezelo {
         for (var sor:adatlista)
         {
             counter++;
-            for (int i=1;i<=adatlista.size();i++)
+            for (int i=1;i<=sor.size();i++)
             {
                 if (i==1)
                     penz=penz+Integer.parseInt(sor.get(i));
