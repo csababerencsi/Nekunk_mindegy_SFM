@@ -2,6 +2,9 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.StackedBarChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
@@ -60,20 +63,20 @@
                           <Button fx:id="milkyCoffeeBtn" layoutX="82.0" layoutY="318.0" mnemonicParsing="false" onAction="#milkyBtnPush" text="Tejes kávé" />
                           <Label layoutX="89.0" layoutY="149.0" style="-fx-font-weight: bold;" text="Kávé fajták" />
                           <TextField fx:id="inputMoney" layoutX="554.0" layoutY="135.0" prefHeight="26.0" prefWidth="84.0" promptText="pl. 250000Ft" />
-                          <Label layoutX="426.0" layoutY="139.0" text="Össz pénz:" />
-                          <Label fx:id="valueMoney" layoutX="508.0" layoutY="139.0" text="0" />
+                          <Label fx:id="summoneyId" layoutX="426.0" layoutY="139.0" stylesheets="@../styles/base.css" text="Össz pénz:" />
+                          <Label fx:id="valueMoney" layoutX="508.0" layoutY="139.0" stylesheets="@../styles/base.css" text="0" />
                           <TextField fx:id="inputCoffee" layoutX="554.0" layoutY="179.0" prefHeight="26.0" prefWidth="84.0" promptText="pl. 20000g" />
-                          <Label layoutX="439.0" layoutY="183.0" text="Kávé:" />
-                          <Label fx:id="valueCoffee" layoutX="508.0" layoutY="183.0" text="0" />
+                          <Label fx:id="coffeeId" layoutX="439.0" layoutY="183.0" stylesheets="@../styles/base.css" text="Kávé:" />
+                          <Label fx:id="valueCoffee" layoutX="508.0" layoutY="183.0" stylesheets="@../styles/base.css" text="0" />
                           <TextField fx:id="inputWater" layoutX="554.0" layoutY="224.0" prefHeight="26.0" prefWidth="84.0" promptText="pl. 20000ml" />
-                          <Label layoutX="444.0" layoutY="229.0" text="Víz:" />
-                          <Label fx:id="valueWater" layoutX="508.0" layoutY="228.0" text="0" />
+                          <Label fx:id="waterId" layoutX="444.0" layoutY="229.0" stylesheets="@../styles/base.css" text="Víz:" />
+                          <Label fx:id="valueWater" layoutX="508.0" layoutY="228.0" stylesheets="@../styles/base.css" text="0" />
                           <TextField fx:id="inputMilk" layoutX="554.0" layoutY="265.0" prefHeight="26.0" prefWidth="84.0" promptText="pl. 20000ml" />
-                          <Label layoutX="444.0" layoutY="269.0" text="Tej:" />
-                          <Label fx:id="valueMilk" layoutX="508.0" layoutY="269.0" text="0" />
+                          <Label fx:id="milkId" layoutX="444.0" layoutY="269.0" stylesheets="@../styles/base.css" text="Tej:" />
+                          <Label fx:id="valueMilk" layoutX="508.0" layoutY="269.0" stylesheets="@../styles/base.css" text="0" />
                           <TextField fx:id="inputSugar" layoutX="554.0" layoutY="309.0" prefHeight="26.0" prefWidth="84.0" promptText="pl. 20000ml" />
-                          <Label layoutX="436.0" layoutY="313.0" text="Cukor:" />
-                          <Label fx:id="valueSugar" layoutX="508.0" layoutY="313.0" text="0" />
+                          <Label fx:id="sugarId" layoutX="436.0" layoutY="313.0" stylesheets="@../styles/base.css" text="Cukor:" />
+                          <Label fx:id="valueSugar" layoutX="508.0" layoutY="313.0" stylesheets="@../styles/base.css" text="0" />
                         <Button fx:id="saveMoney" layoutX="666.0" layoutY="134.0" mnemonicParsing="false" onAction="#saveMoneyBtnPush" prefHeight="26.0" prefWidth="69.0" stylesheets="@../styles/base.css" text="Mentés" />
                         <Button fx:id="saveCoffee" layoutX="666.0" layoutY="178.0" mnemonicParsing="false" onAction="#saveCoffeeBtnPush" prefHeight="26.0" prefWidth="69.0" stylesheets="@../styles/base.css" text="Mentés" />
                         <Button fx:id="saveWater" layoutX="666.0" layoutY="223.0" mnemonicParsing="false" onAction="#saveWaterBtnPush" prefHeight="26.0" prefWidth="69.0" stylesheets="@../styles/base.css" text="Mentés" />
@@ -104,23 +107,31 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab closable="false" text="Statisztika">
+            <Tab fx:id="statisticstab" closable="false" text="Statisztika">
               <content>
                 <AnchorPane fx:id="karbantartpanel" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="84.0" layoutY="64.0" text="Aktiv automaták:" />
-                        <Label fx:id="automatacounter" layoutX="182.0" layoutY="64.0" text="Label" />
-                        <Label layoutX="84.0" layoutY="92.0" text="Össz pénz:" />
-                        <Label layoutX="84.0" layoutY="123.0" text="Össz kávé:" />
-                        <Label layoutX="84.0" layoutY="152.0" text="Össz tej:" />
-                        <Label layoutX="84.0" layoutY="179.0" text="Össz cukor:" />
-                        <Label layoutX="84.0" layoutY="203.0" text="Össz víz:" />
-                        <Label fx:id="sumMoney" layoutX="154.0" layoutY="92.0" text="Label" />
-                        <Label fx:id="sumCoffee" layoutX="159.0" layoutY="123.0" text="Label" />
-                        <Label fx:id="sumMilk" layoutX="159.0" layoutY="152.0" text="Label" />
-                        <Label fx:id="sumSugar" layoutX="159.0" layoutY="179.0" text="Label" />
-                        <Label fx:id="sumWater" layoutX="159.0" layoutY="203.0" text="Label" />
-                        <Button fx:id="refreshstat" onAction="#refreshstatBtnPush" layoutX="102.0" layoutY="261.0" mnemonicParsing="false" text="Refresh" />
+                        <Label layoutX="69.0" layoutY="41.0" style="-fx-underline: true;" text="Aktiv automaták:" />
+                        <Label fx:id="automatacounter" layoutX="181.0" layoutY="41.0" text="unknown" />
+                        <Label layoutX="70.0" layoutY="74.0" style="-fx-underline: true;" text="Össz pénz:" />
+                        <Label layoutX="71.0" layoutY="105.0" style="-fx-underline: true;" text="Össz kávé:" />
+                        <Label layoutX="71.0" layoutY="134.0" style="-fx-underline: true;" text="Össz tej:" />
+                        <Label layoutX="68.0" layoutY="161.0" style="-fx-underline: true;" text="Össz cukor:" />
+                        <Label layoutX="70.0" layoutY="188.0" style="-fx-underline: true;" text="Össz víz:" />
+                        <Label fx:id="sumMoney" layoutX="181.0" layoutY="74.0" text="unknown" />
+                        <Label fx:id="sumCoffee" layoutX="181.0" layoutY="105.0" text="unknown" />
+                        <Label fx:id="sumMilk" layoutX="181.0" layoutY="134.0" text="unknown" />
+                        <Label fx:id="sumSugar" layoutX="181.0" layoutY="161.0" text="unknown" />
+                        <Label fx:id="sumWater" layoutX="181.0" layoutY="188.0" text="unknown" />
+                        <Button fx:id="refreshstat" layoutX="122.0" layoutY="241.0" mnemonicParsing="false" onAction="#refreshstatBtnPush" text="Refresh" />
+                        <StackedBarChart fx:id="graphId" layoutX="334.0" layoutY="134.0" prefHeight="387.0" prefWidth="482.0" stylesheets="@../styles/base.css" title="Statisztika">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </StackedBarChart>
                      </children></AnchorPane>
               </content>
             </Tab>

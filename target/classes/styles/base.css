@@ -37,10 +37,10 @@ and open the template in the editor.
 #delallbtn:hover {
     -fx-border-color: red;
 }
-#creatdeltab:focus ,#defaulttab:focus {
+#creatdeltab:focus ,#defaulttab:focus, #statisticstab:focus {
     -fx-border-color: lawngreen;
 }
-#creatdeltab:hover,#defaulttab:hover {
+#creatdeltab:hover,#defaulttab:hover, #statisticstab:hover {
     -fx-border-color: lawngreen;
     -fx-border-bottom: none;
 }
@@ -59,4 +59,20 @@ and open the template in the editor.
 }
 #inputMoney:hover, #inputCoffee:hover, #inputWater:hover, #inputMilk:hover, #inputSugar:hover{
     -fx-border-color: lightcoral;
+}
+#summoneyId, #valueMoney, #coffeeId, #valueCoffee, #waterId, #valueWater, #milkId, #valueMilk, #sugarId, #valueSugar {
+    -fx-font-weight: bold;
+}
+
+#graphId {
+    -fx-background-color: transparent;
+    
+}
+
+#chooseAutomata:hover {
+    -fx-border-color: yellow;
+}
+
+#refreshstat:hover {
+    -fx-border-color: cyan;
 }
