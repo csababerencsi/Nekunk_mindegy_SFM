@@ -305,6 +305,18 @@ public class FXMLController {
         
        Fajlkezelo file=new Fajlkezelo();
        file.automataDelAll();
+       for(var item:chooseAutomata.getItems()){
+            item.setVisible(false);
+        }
+       
+       
+        automataname.setText("Válassz automatát!");
+        valueMoney.setText("0");
+        valueCoffee.setText("0");
+        valueWater.setText("0");
+        valueMilk.setText("0");
+        valueSugar.setText("0");
+    
        
     }
     
