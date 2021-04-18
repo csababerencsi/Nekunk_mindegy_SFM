@@ -102,6 +102,7 @@
                             <MenuItem fx:id="defaultautomata" mnemonicParsing="false" onAction="#switchtodefault" text="Default" visible="false" />
                           </items>
                         </MenuButton>
+                        <Label fx:id="errorindicator" layoutX="212.0" layoutY="234.0" prefHeight="18.0" prefWidth="193.0" textFill="#ff0404" visible="false" />
                   
                                               </children>
                   </AnchorPane>
@@ -116,7 +117,7 @@
                         <Label layoutX="70.0" layoutY="74.0" style="-fx-underline: true;" text="Össz pénz:" />
                         <Label layoutX="71.0" layoutY="105.0" style="-fx-underline: true;" text="Össz kávé:" />
                         <Label layoutX="71.0" layoutY="134.0" style="-fx-underline: true;" text="Össz tej:" />
-                        <Label layoutX="68.0" layoutY="161.0" style="-fx-underline: true;" text="Össz cukor:" />
+                        <Label layoutX="71.0" layoutY="161.0" style="-fx-underline: true;" text="Össz cukor:" />
                         <Label layoutX="70.0" layoutY="188.0" style="-fx-underline: true;" text="Össz víz:" />
                         <Label fx:id="sumMoney" layoutX="181.0" layoutY="74.0" text="unknown" />
                         <Label fx:id="sumCoffee" layoutX="181.0" layoutY="105.0" text="unknown" />

@@ -26,6 +26,10 @@ import javafx.scene.layout.StackPane;
 
 public class FXMLController {
     
+    
+    @FXML
+    private Label errorindicator;
+    
     @FXML
     private AnchorPane karbantartpanel;
     
@@ -40,8 +44,7 @@ public class FXMLController {
     
     @FXML
     private MenuItem defaultautomata;
-    
-    
+   
     
     @FXML
     private Label automataname;
@@ -301,12 +304,45 @@ public class FXMLController {
 	});
         
         ArrayList<String> adatoktofile2 = new ArrayList<String>();
-        adatoktofile2.add(regname.getText());
-        adatoktofile2.add(regmoney.getText());
-        adatoktofile2.add(regcoffee.getText());
-        adatoktofile2.add(regwater.getText());
-        adatoktofile2.add(regmilk.getText());
-        adatoktofile2.add(regsugar.getText());
+        
+        if(regname.getText().equals("")){
+            adatoktofile2.add("Nevtelen");
+        }
+        else{
+            adatoktofile2.add(regname.getText());
+        }
+        if(regmoney.getText().equals("")){
+            adatoktofile2.add("0");
+        }
+        else{
+            adatoktofile2.add(regmoney.getText());
+        }
+        if(regcoffee.getText().equals("")){
+            adatoktofile2.add("0");
+        }
+        else{
+            adatoktofile2.add(regcoffee.getText());
+        }
+        if(regwater.getText().equals("")){
+            adatoktofile2.add("0");
+        }
+        else{
+            adatoktofile2.add(regwater.getText());
+        }
+        if(regmilk.getText().equals("")){
+            adatoktofile2.add("0");
+        }
+        else{
+            adatoktofile2.add(regmilk.getText());
+        }
+        if(regsugar.getText().equals("")){
+            adatoktofile2.add("0");
+        }
+        else{
+            adatoktofile2.add(regsugar.getText());
+        }
+        
+        
         
         ArrayList<ArrayList<String>> nagyadatoktofile2 = new ArrayList<ArrayList<String>>();
         nagyadatoktofile2.add(adatoktofile2);
@@ -392,6 +428,13 @@ public class FXMLController {
         Fajlkezelo f = new Fajlkezelo();
         String nev= automataname.getText();
         ArrayList<String> adatlista=f.automataSelector(nev);
+        ArrayList<Integer> prevadatok = new ArrayList<>();
+        ArrayList<Integer> actualadatok = new ArrayList<>();
+        
+        for(int i=1;i<adatlista.size();i++){
+            prevadatok.add(Integer.parseInt(adatlista.get(i)));
+        }
+        
         
         switch(type){
             case "espresso":{
@@ -414,13 +457,37 @@ public class FXMLController {
                 break;
         }
         
+        for(int i=1;i<adatlista.size();i++){
+            actualadatok.add(Integer.parseInt(adatlista.get(i)));
+        }
         
+        int indicator=0;
+        
+        for(int i=0;i<prevadatok.size();i++){
+            
+            if(prevadatok.get(i)-actualadatok.get(i)!=0){
+                
+                indicator++;
+                
+            }
+        }
         
         f.automataDel(nev);
         
         ArrayList<ArrayList<String>> nagyadatoktofile2 = new ArrayList<ArrayList<String>>();
         nagyadatoktofile2.add(adatlista);
         f.updateFile(nagyadatoktofile2);
+        
+         
+        if(indicator==0){
+           
+            errorindicator.setText("Hiba: Nincs elegendő alapanyag!");
+            errorindicator.setVisible(true);
+        }
+        else{
+          
+            errorindicator.setVisible(false);
+        }
        
         
         valueMoney.setText(adatlista.get(1));

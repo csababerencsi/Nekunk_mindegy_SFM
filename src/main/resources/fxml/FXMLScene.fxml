@@ -102,6 +102,7 @@
                             <MenuItem fx:id="defaultautomata" mnemonicParsing="false" onAction="#switchtodefault" text="Default" visible="false" />
                           </items>
                         </MenuButton>
+                        <Label fx:id="errorindicator" layoutX="212.0" layoutY="234.0" prefHeight="18.0" prefWidth="193.0" textFill="#ff0404" visible="false" />
                   
                                               </children>
                   </AnchorPane>
