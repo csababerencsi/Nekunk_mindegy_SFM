@@ -12,123 +12,110 @@ import java.util.ArrayList;
  * @author Kristof
  */
 public class Coffes {
-    
-    
-    public ArrayList<String> makeEspresso(ArrayList<String> adatok){
-        
-        
+
+    public ArrayList<String> makeEspresso(ArrayList<String> adatok) {
+
         ArrayList<Integer> intadatok = new ArrayList<Integer>();
         ArrayList<String> adatokreturn = new ArrayList<String>();
-        
-        for(int i=1;i<adatok.size();i++){
+
+        for (int i = 1; i < adatok.size(); i++) {
             intadatok.add(Integer.parseInt(adatok.get(i)));
         }
-        
-        if(intadatok.get(1)-14>=0 && intadatok.get(2)-0>=0 && intadatok.get(3)-60>=0 &&intadatok.get(4)-8>=0){
-            intadatok.set(0,intadatok.get(0)+250);
-            intadatok.set(1,intadatok.get(1)-14);
-            intadatok.set(2,intadatok.get(2)-0);
-            intadatok.set(3,intadatok.get(3)-60);
-            intadatok.set(4,intadatok.get(4)-8);
+
+        if (intadatok.get(1) - 14 >= 0 && intadatok.get(2) - 0 >= 0 && intadatok.get(3) - 60 >= 0 && intadatok.get(4) - 8 >= 0) {
+            intadatok.set(0, intadatok.get(0) + 250);
+            intadatok.set(1, intadatok.get(1) - 14);
+            intadatok.set(2, intadatok.get(2) - 0);
+            intadatok.set(3, intadatok.get(3) - 60);
+            intadatok.set(4, intadatok.get(4) - 8);
         }
-        
+
         adatokreturn.add(adatok.get(0));
-        
-        for(int i=0;i<intadatok.size();i++){
+
+        for (int i = 0; i < intadatok.size(); i++) {
             adatokreturn.add(Integer.toString(intadatok.get(i)));
         }
-        
-        
-        
+
         return adatokreturn;
     }
-    
-    public ArrayList<String> makeCappuccino(ArrayList<String> adatok){
-        
-        
+
+    public ArrayList<String> makeCappuccino(ArrayList<String> adatok) {
+
         ArrayList<Integer> intadatok = new ArrayList<Integer>();
         ArrayList<String> adatokreturn = new ArrayList<String>();
-        
-        for(int i=1;i<adatok.size();i++){
+
+        for (int i = 1; i < adatok.size(); i++) {
             intadatok.add(Integer.parseInt(adatok.get(i)));
         }
-        
-        if(intadatok.get(1)-7>=0 && intadatok.get(2)-30>=0 && intadatok.get(3)-8>=0 &&intadatok.get(4)-85>=0){
-            intadatok.set(0,intadatok.get(0)+350);
-            intadatok.set(1,intadatok.get(1)-7);
-            intadatok.set(2,intadatok.get(2)-30);
-            intadatok.set(3,intadatok.get(3)-8);
-            intadatok.set(4,intadatok.get(4)-85);
+
+        if (intadatok.get(1) - 7 >= 0 && intadatok.get(2) - 30 >= 0 && intadatok.get(3) - 8 >= 0 && intadatok.get(4) - 85 >= 0) {
+            intadatok.set(0, intadatok.get(0) + 350);
+            intadatok.set(1, intadatok.get(1) - 7);
+            intadatok.set(2, intadatok.get(2) - 30);
+            intadatok.set(3, intadatok.get(3) - 8);
+            intadatok.set(4, intadatok.get(4) - 85);
         }
-        
+
         adatokreturn.add(adatok.get(0));
-        
-        for(int i=0;i<intadatok.size();i++){
+
+        for (int i = 0; i < intadatok.size(); i++) {
             adatokreturn.add(Integer.toString(intadatok.get(i)));
         }
-        
+
         return adatokreturn;
-        
+
     }
-    
-    public ArrayList<String> makeLatte(ArrayList<String> adatok){
-       
-        
+
+    public ArrayList<String> makeLatte(ArrayList<String> adatok) {
+
         ArrayList<Integer> intadatok = new ArrayList<Integer>();
         ArrayList<String> adatokreturn = new ArrayList<String>();
-        
-        for(int i=1;i<adatok.size();i++){
+
+        for (int i = 1; i < adatok.size(); i++) {
             intadatok.add(Integer.parseInt(adatok.get(i)));
         }
-        
-        if(intadatok.get(1)-14>=0 && intadatok.get(2)-60>=0 && intadatok.get(3)-8>=0 &&intadatok.get(4)-90>=0){
-            intadatok.set(0,intadatok.get(0)+300);
-            intadatok.set(1,intadatok.get(1)-14);
-            intadatok.set(2,intadatok.get(2)-60);
-            intadatok.set(3,intadatok.get(3)-8);
-            intadatok.set(4,intadatok.get(4)-90);
+
+        if (intadatok.get(1) - 14 >= 0 && intadatok.get(2) - 60 >= 0 && intadatok.get(3) - 8 >= 0 && intadatok.get(4) - 90 >= 0) {
+            intadatok.set(0, intadatok.get(0) + 300);
+            intadatok.set(1, intadatok.get(1) - 14);
+            intadatok.set(2, intadatok.get(2) - 60);
+            intadatok.set(3, intadatok.get(3) - 8);
+            intadatok.set(4, intadatok.get(4) - 90);
         }
-        
-        
+
         adatokreturn.add(adatok.get(0));
-        
-        for(int i=0;i<intadatok.size();i++){
+
+        for (int i = 0; i < intadatok.size(); i++) {
             adatokreturn.add(Integer.toString(intadatok.get(i)));
         }
-        
+
         return adatokreturn;
     }
-    
-    public  ArrayList<String> makeMilkyCoffe(ArrayList<String> adatok){
-        
+
+    public ArrayList<String> makeMilkyCoffe(ArrayList<String> adatok) {
+
         ArrayList<Integer> intadatok = new ArrayList<Integer>();
         ArrayList<String> adatokreturn = new ArrayList<String>();
-        
-        for(int i=1;i<adatok.size();i++){
+
+        for (int i = 1; i < adatok.size(); i++) {
             intadatok.add(Integer.parseInt(adatok.get(i)));
         }
-        
-        if(intadatok.get(1)-10>=0 && intadatok.get(2)-50>=0 && intadatok.get(3)-8>=0 &&intadatok.get(4)-100>=0){
-            intadatok.set(0,intadatok.get(0)+400);
-            intadatok.set(1,intadatok.get(1)-10);
-            intadatok.set(2,intadatok.get(2)-50);
-            intadatok.set(3,intadatok.get(3)-8);
-            intadatok.set(4,intadatok.get(4)-100);
+
+        if (intadatok.get(1) - 10 >= 0 && intadatok.get(2) - 50 >= 0 && intadatok.get(3) - 8 >= 0 && intadatok.get(4) - 100 >= 0) {
+            intadatok.set(0, intadatok.get(0) + 400);
+            intadatok.set(1, intadatok.get(1) - 10);
+            intadatok.set(2, intadatok.get(2) - 50);
+            intadatok.set(3, intadatok.get(3) - 8);
+            intadatok.set(4, intadatok.get(4) - 100);
         }
-        
+
         adatokreturn.add(adatok.get(0));
-        
-        for(int i=0;i<intadatok.size();i++){
+
+        for (int i = 0; i < intadatok.size(); i++) {
             adatokreturn.add(Integer.toString(intadatok.get(i)));
         }
-        
+
         return adatokreturn;
     }
-    
-        
-    
-    
-    
-    
-    
+
 }

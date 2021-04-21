@@ -15,11 +15,12 @@ and open the template in the editor.
 .button{
     -fx-font-weight: bold;
     -fx-font-style: italic;
-    
+
 }
 
 #regname, #regmoney, #regcoffee, #regwater, #regmilk, #regsugar {
     -fx-border-color: grey;
+    -fx-alignment: center;
 }
 #regname:hover, #regmoney:hover, #regcoffee:hover, #regwater:hover, #regmilk:hover, #regsugar:hover{
     -fx-border-color: lightcoral;
@@ -57,6 +58,10 @@ and open the template in the editor.
 #resetButton:hover {
     -fx-border-color: orange;
 }
+
+#inputMoney, #inputCoffee, #inputWater, #inputMilk, #inputSugar{
+    -fx-alignment: center;
+}
 #inputMoney:hover, #inputCoffee:hover, #inputWater:hover, #inputMilk:hover, #inputSugar:hover{
     -fx-border-color: lightcoral;
 }
@@ -66,7 +71,7 @@ and open the template in the editor.
 
 #graphId {
     -fx-background-color: transparent;
-    
+
 }
 
 #chooseAutomata:hover {
@@ -75,4 +80,8 @@ and open the template in the editor.
 
 #refreshstat:hover {
     -fx-border-color: cyan;
+}
+
+#automataname {
+    -fx-text-align: center;
 }
