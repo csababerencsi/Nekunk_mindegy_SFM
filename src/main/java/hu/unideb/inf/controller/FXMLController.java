@@ -8,11 +8,20 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.chart.Axis;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.StackedBarChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
@@ -25,6 +34,17 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 
 public class FXMLController {
+    
+    
+    @FXML
+    public BarChart<?, ?> graphstat;
+
+    @FXML
+    public CategoryAxis statX;
+
+    @FXML
+    public NumberAxis statY;
+
 
     @FXML
     private Label errorindicator;
@@ -172,7 +192,10 @@ public class FXMLController {
     @FXML
     public void initialize() {
         startValues();
+        
     }
+    
+    
     
     public void refresher(){
         Fajlkezelo f = new Fajlkezelo();
@@ -185,7 +208,43 @@ public class FXMLController {
         sumWater.setText(statok.get(3).toString());
         sumMilk.setText(statok.get(4).toString());
         sumSugar.setText(statok.get(5).toString());
+        
+        
+        if((graphstat.getData().size())!=0){
+            
+            graphstat.getData().clear();
+             
+        }
+        
+        
+
+        statX.setCategories(FXCollections.<String>observableArrayList(Arrays.asList
+        ("Pénz", "Kávé", "Tej", "Cukor", "Víz"))); 
+        statX.setLabel("Készlet");  
+
+         
+        statY.setLabel("Mennyiségek");
+        
+        graphstat.setTitle("Statisztika");
+        
+        XYChart.Series dataSeries1 = new XYChart.Series();
+        //dataSeries1.setName("");
+
+        dataSeries1.getData().add(new XYChart.Data("Pénz", statok.get(1)));
+        dataSeries1.getData().add(new XYChart.Data("Kávé", statok.get(2)));
+        dataSeries1.getData().add(new XYChart.Data("Tej", statok.get(3)));
+        dataSeries1.getData().add(new XYChart.Data("Cukor", statok.get(4)));
+        dataSeries1.getData().add(new XYChart.Data("Víz", statok.get(5)));
+        
+        
+        
+        graphstat.getData().add(dataSeries1);
+        //graphstat.getData().removeAll(dataSeries1);
+        
     }
+   
+    
+    
 
     public void startValues() {
 
@@ -218,25 +277,25 @@ public class FXMLController {
     @FXML
     private void espressoBtnPush(ActionEvent event) {
         coffeButtonHandler("espresso");
-        refresher();
+        
     }
 
     @FXML
     private void cappucinoBtnPush(ActionEvent event) {
         coffeButtonHandler("cappuccino");
-        refresher();
+        
     }
 
     @FXML
     private void latteBtnPush(ActionEvent event) {
         coffeButtonHandler("latte");
-        refresher();
+        
     }
 
     @FXML
     private void milkyBtnPush(ActionEvent event) {
         coffeButtonHandler("milkycoffe");
-        refresher();
+        
     }
 
     @FXML
@@ -245,7 +304,7 @@ public class FXMLController {
         String value = inputMoney.getText();
         int itemIndex = 1;
         saveButtonHandler(nev, value, itemIndex);
-        refresher();
+        
     }
 
     @FXML
@@ -254,7 +313,7 @@ public class FXMLController {
         String value = inputCoffee.getText();
         int itemIndex = 2;
         saveButtonHandler(nev, value, itemIndex);
-        refresher();
+        
     }
 
     @FXML
@@ -263,7 +322,7 @@ public class FXMLController {
         String value = inputWater.getText();
         int itemIndex = 3;
         saveButtonHandler(nev, value, itemIndex);
-        refresher();
+        
     }
 
     @FXML
@@ -272,7 +331,7 @@ public class FXMLController {
         String value = inputMilk.getText();
         int itemIndex = 4;
         saveButtonHandler(nev, value, itemIndex);
-        refresher();
+        
     }
 
     @FXML
@@ -281,7 +340,7 @@ public class FXMLController {
         String value = inputSugar.getText();
         int itemIndex = 5;
         saveButtonHandler(nev, value, itemIndex);
-        refresher();
+        
     }
 
     @FXML
@@ -368,14 +427,14 @@ public class FXMLController {
         Fajlkezelo f = new Fajlkezelo();
         ArrayList<String> adatlista = f.automataSelector(nev);
         labelSwitcher(nev);
-        refresher();
+        
     }
 
     @FXML
     private void switchtodefault(ActionEvent event) {
         String nev = "DE-IK kaveautomata";
         labelSwitcher(nev);
-        refresher();
+        
     }
 
     public void labelSwitcher(String nev) {
@@ -410,6 +469,7 @@ public class FXMLController {
         valueWater.setText(adatok.get(3));
         valueMilk.setText(adatok.get(4));
         valueSugar.setText(adatok.get(5));
+        refresher();
     }
 
     public void coffeButtonHandler(String type) {
@@ -481,6 +541,7 @@ public class FXMLController {
         valueWater.setText(adatlista.get(3));
         valueMilk.setText(adatlista.get(4));
         valueSugar.setText(adatlista.get(5));
+        refresher();
     }
 
 }

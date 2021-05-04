@@ -1,13 +1,22 @@
 package hu.unideb.inf;
 
 import hu.unideb.inf.controller.FXMLController;
+import java.util.Arrays;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
+import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.SubScene;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.StackedBarChart;
 import javafx.stage.Stage;
 import javafx.scene.control.ProgressIndicator;
+import javafx.scene.layout.VBox;
 
 public class MainApp extends Application {
 
@@ -19,7 +28,8 @@ public class MainApp extends Application {
         stage.setTitle("Kávé gép");
         stage.setScene(scene);
         stage.show();
-
+        
+         
     }
 
     /**
