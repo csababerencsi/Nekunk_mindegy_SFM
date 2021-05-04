@@ -2,25 +2,15 @@ package hu.unideb.inf.controller;
 
 import hu.unideb.inf.Coffes;
 import hu.unideb.inf.Fajlkezelo;
-import hu.unideb.inf.MainApp;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Scanner;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.chart.Axis;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.StackedBarChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -29,13 +19,17 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
 
 public class FXMLController {
     
     
+    @FXML
+    private Button karbanOn;
+    
+    @FXML
+    private Button karbanOff;    
+        
     @FXML
     public BarChart<?, ?> graphstat;
 
@@ -184,15 +178,63 @@ public class FXMLController {
 
     @FXML
     private Label sumWater;
+    
+    @FXML
+    private Label summoneyId;
+    
+    @FXML
+    private Label coffeeId;
+    
+    @FXML
+    private Label waterId;
+    
+    @FXML
+    private Label milkId;
+    
+    @FXML
+    private Label sugarId;
 
-    public Label getValueCoffee() {
-        return valueCoffee;
-    }
-
+    
     @FXML
     public void initialize() {
         startValues();
         
+    }
+    
+    @FXML
+    private void karbantartasON(ActionEvent event) {
+        onoffhandler(true);
+    }
+    @FXML
+    private void karbantartasOFF(ActionEvent event) {
+        onoffhandler(false);
+    }
+    
+    public void onoffhandler(boolean valtozo){
+        
+        inputMoney.setVisible(valtozo);
+        inputCoffee.setVisible(valtozo);
+        inputWater.setVisible(valtozo);
+        inputMilk.setVisible(valtozo);
+        inputSugar.setVisible(valtozo);
+        
+        saveMoney.setVisible(valtozo);
+        saveCoffee.setVisible(valtozo);
+        saveWater.setVisible(valtozo);
+        saveMilk.setVisible(valtozo);
+        saveSugar.setVisible(valtozo);
+        
+        valueMoney.setVisible(valtozo);
+        valueCoffee.setVisible(valtozo);
+        valueWater.setVisible(valtozo);
+        valueMilk.setVisible(valtozo);
+        valueSugar.setVisible(valtozo);
+        
+        summoneyId.setVisible(valtozo);
+        coffeeId.setVisible(valtozo);
+        waterId.setVisible(valtozo);
+        milkId.setVisible(valtozo);
+        sugarId.setVisible(valtozo);
     }
     
     

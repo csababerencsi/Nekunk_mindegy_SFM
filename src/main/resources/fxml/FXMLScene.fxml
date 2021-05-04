@@ -63,28 +63,26 @@
                                 <Button fx:id="latteBtn" layoutX="96.0" layoutY="274.0" mnemonicParsing="false" onAction="#latteBtnPush" text="Latte" />
                                 <Button fx:id="milkyCoffeeBtn" layoutX="82.0" layoutY="318.0" mnemonicParsing="false" onAction="#milkyBtnPush" text="Tejes kávé" />
                                 <Label layoutX="89.0" layoutY="149.0" style="-fx-font-weight: bold;" text="Kávé fajták" />
-                                <TextField fx:id="inputMoney" layoutX="564.0" layoutY="175.0" prefHeight="26.0" prefWidth="84.0" promptText="pl. 250000Ft" />
-                                <Label fx:id="summoneyId" layoutX="436.0" layoutY="179.0" stylesheets="@../styles/base.css" text="Össz pénz:" />
-                                <Label fx:id="valueMoney" layoutX="518.0" layoutY="179.0" stylesheets="@../styles/base.css" text="0" />
-                                <TextField fx:id="inputCoffee" layoutX="564.0" layoutY="219.0" prefHeight="26.0" prefWidth="84.0" promptText="pl. 25000g" />
-                                <Label fx:id="coffeeId" layoutX="449.0" layoutY="223.0" stylesheets="@../styles/base.css" text="Kávé:" />
-                                <Label fx:id="valueCoffee" layoutX="518.0" layoutY="223.0" stylesheets="@../styles/base.css" text="0" />
-                                <TextField fx:id="inputWater" layoutX="564.0" layoutY="264.0" prefHeight="26.0" prefWidth="84.0" promptText="pl. 20000ml" />
-                                <Label fx:id="waterId" layoutX="454.0" layoutY="269.0" stylesheets="@../styles/base.css" text="Víz:" />
-                                <Label fx:id="valueWater" layoutX="518.0" layoutY="268.0" stylesheets="@../styles/base.css" text="0" />
-                                <TextField fx:id="inputMilk" layoutX="564.0" layoutY="305.0" prefHeight="26.0" prefWidth="84.0" promptText="pl. 17000ml" />
-                                <Label fx:id="milkId" layoutX="454.0" layoutY="309.0" stylesheets="@../styles/base.css" text="Tej:" />
-                                <Label fx:id="valueMilk" layoutX="518.0" layoutY="309.0" stylesheets="@../styles/base.css" text="0" />
-                                <TextField fx:id="inputSugar" layoutX="564.0" layoutY="349.0" prefHeight="26.0" prefWidth="84.0" promptText="pl. 10560g" />
-                                <Label fx:id="sugarId" layoutX="446.0" layoutY="353.0" stylesheets="@../styles/base.css" text="Cukor:" />
-                                <Label fx:id="valueSugar" layoutX="518.0" layoutY="353.0" stylesheets="@../styles/base.css" text="0" />
-                                <Button fx:id="saveMoney" layoutX="676.0" layoutY="174.0" mnemonicParsing="false" onAction="#saveMoneyBtnPush" prefHeight="26.0" prefWidth="69.0" stylesheets="@../styles/base.css" text="Mentés" />
-                                <Button fx:id="saveCoffee" layoutX="676.0" layoutY="218.0" mnemonicParsing="false" onAction="#saveCoffeeBtnPush" prefHeight="26.0" prefWidth="69.0" stylesheets="@../styles/base.css" text="Mentés" />
-                                <Button fx:id="saveWater" layoutX="676.0" layoutY="263.0" mnemonicParsing="false" onAction="#saveWaterBtnPush" prefHeight="26.0" prefWidth="69.0" stylesheets="@../styles/base.css" text="Mentés" />
-                                <Button fx:id="saveMilk" layoutX="676.0" layoutY="305.0" mnemonicParsing="false" onAction="#saveMilkBtnPush" prefHeight="26.0" prefWidth="69.0" stylesheets="@../styles/base.css" text="Mentés" />
-                                <Button fx:id="saveSugar" layoutX="676.0" layoutY="349.0" mnemonicParsing="false" onAction="#saveSugarBtnPush" prefHeight="26.0" prefWidth="69.0" stylesheets="@../styles/base.css" text="Mentés" />
-                                <Label layoutX="454.0" layoutY="505.0" opacity="0.0" text="Visszajáró:" />
-                                <TextField fx:id="changeValue" layoutX="524.0" layoutY="501.0" opacity="0.0" prefHeight="25.0" prefWidth="87.0" />
+                                <TextField fx:id="inputMoney" layoutX="564.0" layoutY="175.0" prefHeight="26.0" prefWidth="84.0" promptText="pl. 250000Ft" visible="false" />
+                                <Label fx:id="summoneyId" layoutX="436.0" layoutY="179.0" stylesheets="@../styles/base.css" text="Össz pénz:" visible="false" />
+                                <Label fx:id="valueMoney" layoutX="518.0" layoutY="179.0" stylesheets="@../styles/base.css" text="0" visible="false" />
+                                <TextField fx:id="inputCoffee" layoutX="564.0" layoutY="219.0" prefHeight="26.0" prefWidth="84.0" promptText="pl. 25000g" visible="false" />
+                                <Label fx:id="coffeeId" layoutX="449.0" layoutY="223.0" stylesheets="@../styles/base.css" text="Kávé:" visible="false" />
+                                <Label fx:id="valueCoffee" layoutX="518.0" layoutY="223.0" stylesheets="@../styles/base.css" text="0" visible="false" />
+                                <TextField fx:id="inputWater" layoutX="564.0" layoutY="264.0" prefHeight="26.0" prefWidth="84.0" promptText="pl. 20000ml" visible="false" />
+                                <Label fx:id="waterId" layoutX="454.0" layoutY="269.0" stylesheets="@../styles/base.css" text="Víz:" visible="false" />
+                                <Label fx:id="valueWater" layoutX="518.0" layoutY="268.0" stylesheets="@../styles/base.css" text="0" visible="false" />
+                                <TextField fx:id="inputMilk" layoutX="564.0" layoutY="305.0" prefHeight="26.0" prefWidth="84.0" promptText="pl. 17000ml" visible="false" />
+                                <Label fx:id="milkId" layoutX="454.0" layoutY="309.0" stylesheets="@../styles/base.css" text="Tej:" visible="false" />
+                                <Label fx:id="valueMilk" layoutX="518.0" layoutY="309.0" stylesheets="@../styles/base.css" text="0" visible="false" />
+                                <TextField fx:id="inputSugar" layoutX="564.0" layoutY="349.0" prefHeight="26.0" prefWidth="84.0" promptText="pl. 10560g" visible="false" />
+                                <Label fx:id="sugarId" layoutX="446.0" layoutY="353.0" stylesheets="@../styles/base.css" text="Cukor:" visible="false" />
+                                <Label fx:id="valueSugar" layoutX="518.0" layoutY="353.0" stylesheets="@../styles/base.css" text="0" visible="false" />
+                                <Button fx:id="saveMoney" layoutX="676.0" layoutY="174.0" mnemonicParsing="false" onAction="#saveMoneyBtnPush" prefHeight="26.0" prefWidth="69.0" stylesheets="@../styles/base.css" text="Mentés" visible="false" />
+                                <Button fx:id="saveCoffee" layoutX="676.0" layoutY="218.0" mnemonicParsing="false" onAction="#saveCoffeeBtnPush" prefHeight="26.0" prefWidth="69.0" stylesheets="@../styles/base.css" text="Mentés" visible="false" />
+                                <Button fx:id="saveWater" layoutX="676.0" layoutY="263.0" mnemonicParsing="false" onAction="#saveWaterBtnPush" prefHeight="26.0" prefWidth="69.0" stylesheets="@../styles/base.css" text="Mentés" visible="false" />
+                                <Button fx:id="saveMilk" layoutX="676.0" layoutY="305.0" mnemonicParsing="false" onAction="#saveMilkBtnPush" prefHeight="26.0" prefWidth="69.0" stylesheets="@../styles/base.css" text="Mentés" visible="false" />
+                                <Button fx:id="saveSugar" layoutX="676.0" layoutY="349.0" mnemonicParsing="false" onAction="#saveSugarBtnPush" prefHeight="26.0" prefWidth="69.0" stylesheets="@../styles/base.css" text="Mentés" visible="false" />
                                 <Label layoutX="458.0" layoutY="390.0" opacity="0.0" text="Fizetendő:" />
                                 <TextField fx:id="paymentValue" layoutX="531.0" layoutY="386.0" opacity="0.0" prefHeight="25.0" prefWidth="87.0" />
                                 <Label layoutX="453.0" layoutY="446.0" opacity="0.0" text="Pénzmennyiség:" />
@@ -104,6 +102,9 @@
                                     </items>
                                 </MenuButton>
                                 <Label fx:id="errorindicator" layoutX="212.0" layoutY="234.0" prefHeight="18.0" prefWidth="193.0" textFill="#ff0404" visible="false" />
+                        <Button fx:id="karbanOn" layoutX="204.0" layoutY="455.0" mnemonicParsing="false" onAction="#karbantartasON" text="ON" />
+                        <Label layoutX="91.0" layoutY="472.0" text="Karbantartás mód:" />
+                        <Button fx:id="karbanOff" layoutX="203.0" layoutY="488.0" mnemonicParsing="false" onAction="#karbantartasOFF" text="OFF" />
                   
                             </children>
                         </AnchorPane>
