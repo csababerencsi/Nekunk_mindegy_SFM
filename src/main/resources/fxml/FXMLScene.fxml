@@ -125,7 +125,6 @@
                                 <Label fx:id="sumMilk" layoutX="181.0" layoutY="134.0" text="unknown" />
                                 <Label fx:id="sumSugar" layoutX="181.0" layoutY="161.0" text="unknown" />
                                 <Label fx:id="sumWater" layoutX="181.0" layoutY="188.0" text="unknown" />
-                                <Button fx:id="refreshstat" layoutX="122.0" layoutY="241.0" mnemonicParsing="false" onAction="#refreshstatBtnPush" text="Refresh" />
                                 <StackedBarChart fx:id="graphId" layoutX="334.0" layoutY="134.0" prefHeight="387.0" prefWidth="482.0" stylesheets="@../styles/base.css" title="Statisztika">
                                     <xAxis>
                                         <CategoryAxis side="BOTTOM" />

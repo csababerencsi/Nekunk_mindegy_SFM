@@ -137,8 +137,6 @@ public class FXMLController {
     @FXML
     private Button saveSugar;
 
-    @FXML
-    Button refreshstat;
 
     @FXML
     private TextField changeValue;
@@ -175,6 +173,19 @@ public class FXMLController {
     public void initialize() {
         startValues();
     }
+    
+    public void refresher(){
+        Fajlkezelo f = new Fajlkezelo();
+        ArrayList<Integer> statok = new ArrayList();
+        statok = f.statpage();
+
+        automatacounter.setText(statok.get(0).toString());
+        sumMoney.setText(statok.get(1).toString());
+        sumCoffee.setText(statok.get(2).toString());
+        sumWater.setText(statok.get(3).toString());
+        sumMilk.setText(statok.get(4).toString());
+        sumSugar.setText(statok.get(5).toString());
+    }
 
     public void startValues() {
 
@@ -197,45 +208,35 @@ public class FXMLController {
             }
 
         }
+        
+        refresher();
 
     }
 
-    @FXML
-    private void refreshstatBtnPush(ActionEvent event) {
-        Fajlkezelo f = new Fajlkezelo();
-        ArrayList<Integer> statok = new ArrayList();
-        statok = f.statpage();
-
-        automatacounter.setText(statok.get(0).toString());
-        sumMoney.setText(statok.get(1).toString());
-        sumCoffee.setText(statok.get(2).toString());
-        sumWater.setText(statok.get(3).toString());
-        sumMilk.setText(statok.get(4).toString());
-        sumSugar.setText(statok.get(5).toString());
-        System.out.println(statok.toString());
-    }
+    
 
     @FXML
     private void espressoBtnPush(ActionEvent event) {
         coffeButtonHandler("espresso");
-
+        refresher();
     }
 
     @FXML
     private void cappucinoBtnPush(ActionEvent event) {
         coffeButtonHandler("cappuccino");
-
+        refresher();
     }
 
     @FXML
     private void latteBtnPush(ActionEvent event) {
         coffeButtonHandler("latte");
-
+        refresher();
     }
 
     @FXML
     private void milkyBtnPush(ActionEvent event) {
         coffeButtonHandler("milkycoffe");
+        refresher();
     }
 
     @FXML
@@ -244,6 +245,7 @@ public class FXMLController {
         String value = inputMoney.getText();
         int itemIndex = 1;
         saveButtonHandler(nev, value, itemIndex);
+        refresher();
     }
 
     @FXML
@@ -252,6 +254,7 @@ public class FXMLController {
         String value = inputCoffee.getText();
         int itemIndex = 2;
         saveButtonHandler(nev, value, itemIndex);
+        refresher();
     }
 
     @FXML
@@ -260,6 +263,7 @@ public class FXMLController {
         String value = inputWater.getText();
         int itemIndex = 3;
         saveButtonHandler(nev, value, itemIndex);
+        refresher();
     }
 
     @FXML
@@ -268,6 +272,7 @@ public class FXMLController {
         String value = inputMilk.getText();
         int itemIndex = 4;
         saveButtonHandler(nev, value, itemIndex);
+        refresher();
     }
 
     @FXML
@@ -276,6 +281,7 @@ public class FXMLController {
         String value = inputSugar.getText();
         int itemIndex = 5;
         saveButtonHandler(nev, value, itemIndex);
+        refresher();
     }
 
     @FXML
@@ -335,6 +341,7 @@ public class FXMLController {
 
         Fajlkezelo fajlok = new Fajlkezelo();
         fajlok.updateFile(nagyadatoktofile2);
+        refresher();
 
     }
 
@@ -353,6 +360,7 @@ public class FXMLController {
         valueWater.setText("0");
         valueMilk.setText("0");
         valueSugar.setText("0");
+        refresher();
 
     }
 
@@ -360,12 +368,14 @@ public class FXMLController {
         Fajlkezelo f = new Fajlkezelo();
         ArrayList<String> adatlista = f.automataSelector(nev);
         labelSwitcher(nev);
+        refresher();
     }
 
     @FXML
     private void switchtodefault(ActionEvent event) {
         String nev = "DE-IK kaveautomata";
         labelSwitcher(nev);
+        refresher();
     }
 
     public void labelSwitcher(String nev) {
