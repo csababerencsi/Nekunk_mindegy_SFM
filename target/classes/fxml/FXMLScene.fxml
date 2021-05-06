@@ -136,6 +136,14 @@
                             <NumberAxis fx:id="statY" side="LEFT" />
                           </yAxis>
                         </BarChart>
+                        <Label layoutX="78.0" layoutY="235.0" text="Espresso" />
+                        <Label layoutX="78.0" layoutY="268.0" text="Cappuccino" />
+                        <Label layoutX="79.0" layoutY="297.0" text="Latte" />
+                        <Label layoutX="78.0" layoutY="325.0" text="Tejes kávé" />
+                        <Label fx:id="espressocounter" layoutX="181.0" layoutY="235.0" text="0" />
+                        <Label fx:id="cappuccinocounter" layoutX="181.0" layoutY="268.0" text="0" />
+                        <Label fx:id="lattecounter" layoutX="181.0" layoutY="297.0" text="0" />
+                        <Label fx:id="milkycoffeecounter" layoutX="181.0" layoutY="325.0" text="0" />
                             </children>
                         </AnchorPane>
                     </content>

@@ -24,6 +24,18 @@ import javafx.scene.layout.AnchorPane;
 public class FXMLController {
     
     @FXML
+    private Label espressocounter;
+
+    @FXML
+    private Label cappuccinocounter;
+
+    @FXML
+    private Label lattecounter;
+
+    @FXML
+    private Label milkycoffeecounter;
+    
+    @FXML
     private TextField inputdel;
     
     @FXML
@@ -566,18 +578,38 @@ public class FXMLController {
         switch (type) {
             case "espresso": {
                 adatlista = coffees.makeEspresso(adatlista);
+                String tmp = espressocounter.getText();
+                int counter = Integer.parseInt(tmp);
+                counter++;
+                String s=Integer.toString(counter);
+                espressocounter.setText(s);
                 break;
             }
             case "cappuccino": {
                 adatlista = coffees.makeCappuccino(adatlista);
+                String tmp = cappuccinocounter.getText();
+                int counter = Integer.parseInt(tmp);
+                counter++;
+                String s=Integer.toString(counter);
+                cappuccinocounter.setText(s);
                 break;
             }
             case "latte": {
                 adatlista = coffees.makeLatte(adatlista);
+                String tmp = lattecounter.getText();
+                int counter = Integer.parseInt(tmp);
+                counter++;
+                String s=Integer.toString(counter);
+                lattecounter.setText(s);
                 break;
             }
             case "milkycoffe": {
                 adatlista = coffees.makeMilkyCoffe(adatlista);
+                String tmp = milkycoffeecounter.getText();
+                int counter = Integer.parseInt(tmp);
+                counter++;
+                String s=Integer.toString(counter);
+                milkycoffeecounter.setText(s);
                 break;
             }
             default:
