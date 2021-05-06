@@ -85,6 +85,7 @@ public class Fajlkezelo {
             for (var elem : adatlista) {
                 String tmp = String.join(":", elem);
                 myWriter.write(tmp);
+                myWriter.write("\n");
             }
 
             myWriter.close();

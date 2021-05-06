@@ -23,6 +23,12 @@ import javafx.scene.layout.AnchorPane;
 
 public class FXMLController {
     
+    @FXML
+    private TextField inputdel;
+    
+    @FXML
+    private Button delselected;
+    
     
     @FXML
     private Button karbanOn;
@@ -201,6 +207,35 @@ public class FXMLController {
         
     }
     
+           
+    @FXML
+    private void deleteselected(ActionEvent event) {
+        
+        int hiba=0;
+        
+        Fajlkezelo f = new Fajlkezelo();
+        
+        String name = inputdel.getText();
+        
+        for(var automata:f.readFile()){
+             String tmp = automata.get(0);
+             
+             if(!(name.equals(tmp))){
+                 hiba++;
+             }
+        }
+        
+        if(hiba==0){
+            f.automataDel(name);
+        
+            chooseAutomata.getItems().clear();
+            startValues();
+        refresher();
+        }
+        
+        
+    }   
+    
     @FXML
     private void karbantartasON(ActionEvent event) {
         onoffhandler(true);
@@ -307,6 +342,7 @@ public class FXMLController {
                     changeautomata(tmp2);
                 });
             }
+            
 
         }
         
@@ -399,7 +435,6 @@ public class FXMLController {
         chooseAutomata.getItems().add(menuItemtmp);
         final String tmp2 = tmp;
         menuItemtmp.setOnAction(e -> {
-
             changeautomata(tmp2);
         });
 
@@ -443,6 +478,7 @@ public class FXMLController {
         Fajlkezelo fajlok = new Fajlkezelo();
         fajlok.updateFile(nagyadatoktofile2);
         refresher();
+        
 
     }
 

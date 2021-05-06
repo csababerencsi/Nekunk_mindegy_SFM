@@ -39,7 +39,7 @@
                                 <TextField fx:id="regmilk" layoutX="137.0" layoutY="230.0" promptText="pl. 16000ml" />
                                 <TextField fx:id="regsugar" layoutX="137.0" layoutY="273.0" promptText="pl. 23200g" />
                                 <Button fx:id="regbtn" layoutX="174.0" layoutY="312.0" mnemonicParsing="false" onAction="#regbtnpush" stylesheets="@../styles/base.css" text="Létrehozás" />
-                                <Button fx:id="delallbtn" layoutX="524.0" layoutY="142.0" mnemonicParsing="false" onAction="#delbtnpush" stylesheets="@../styles/base.css" text="Összes automata törlése" textAlignment="CENTER">
+                                <Button fx:id="delallbtn" layoutX="562.0" layoutY="242.0" mnemonicParsing="false" onAction="#delbtnpush" stylesheets="@../styles/base.css" text="Összes automata törlése" textAlignment="CENTER">
                                     <cursor>
                                         <Cursor fx:constant="DEFAULT" />
                                     </cursor>
@@ -47,6 +47,8 @@
                                         <Insets />
                                     </opaqueInsets>
                                 </Button>
+                        <TextField fx:id="inputdel" layoutX="531.0" layoutY="99.0" prefHeight="26.0" prefWidth="167.0" promptText="Írd be a törlendő automatát!" />
+                        <Button fx:id="delselected" layoutX="709.0" layoutY="99.0" mnemonicParsing="false" onAction="#deleteselected" text="Törlés" />
                             </children>
                         </AnchorPane>
                     </content>
