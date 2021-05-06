@@ -104,9 +104,12 @@
                                     </items>
                                 </MenuButton>
                                 <Label fx:id="errorindicator" layoutX="212.0" layoutY="234.0" prefHeight="18.0" prefWidth="193.0" textFill="#ff0404" visible="false" />
-                        <Button fx:id="karbanOn" layoutX="204.0" layoutY="455.0" mnemonicParsing="false" onAction="#karbantartasON" text="ON" />
-                        <Label layoutX="91.0" layoutY="472.0" text="Karbantartás mód:" />
-                        <Button fx:id="karbanOff" layoutX="203.0" layoutY="488.0" mnemonicParsing="false" onAction="#karbantartasOFF" text="OFF" />
+                        <Button fx:id="karbanOn" layoutX="204.0" layoutY="455.0" mnemonicParsing="false" onAction="#karbantartasON" text="ON" visible="false" />
+                        <Label fx:id="karbanlabel" layoutX="91.0" layoutY="472.0" text="Karbantartás mód:" visible="false" />
+                        <Button fx:id="karbanOff" layoutX="203.0" layoutY="488.0" mnemonicParsing="false" onAction="#karbantartasOFF" text="OFF" visible="false" />
+                        <Label layoutX="346.0" layoutY="479.0" />
+                        <TextField fx:id="masterinp" layoutX="331.0" layoutY="475.0" promptText=" Master password (0000)" />
+                        <Button fx:id="masterbtn" layoutX="499.0" layoutY="475.0" mnemonicParsing="false" onAction="#masterbtnpush" text="Belépés" />
                   
                             </children>
                         </AnchorPane>

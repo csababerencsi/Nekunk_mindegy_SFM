@@ -24,6 +24,16 @@ import javafx.scene.layout.AnchorPane;
 public class FXMLController {
     
     @FXML
+    private Label karbanlabel;
+    
+    
+    @FXML
+    private TextField masterinp;
+    
+    @FXML
+    private Button masterbtn;
+    
+    @FXML
     private Label espressocounter;
 
     @FXML
@@ -217,6 +227,19 @@ public class FXMLController {
     public void initialize() {
         startValues();
         
+    }
+    
+    @FXML
+    private void masterbtnpush(ActionEvent event) {
+        
+        String inp=masterinp.getText();
+        String actual = "0000";
+        
+        if(inp.equals(actual)){
+            karbanOn.setVisible(true);
+            karbanOff.setVisible(true);
+            karbanlabel.setVisible(true);
+        }
     }
     
            
