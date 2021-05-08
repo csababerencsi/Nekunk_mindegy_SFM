@@ -15,12 +15,8 @@ import java.util.Scanner;
  *
  * @author Kristof
  */
-
-
-
-
 public class Fajlkezelo {
-    
+
     public void resetFile(String nev) {
 
         ArrayList<String> adatlista = new ArrayList<>();

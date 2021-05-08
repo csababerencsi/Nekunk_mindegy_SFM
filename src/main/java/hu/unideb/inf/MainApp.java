@@ -28,8 +28,7 @@ public class MainApp extends Application {
         stage.setTitle("Kávé gép");
         stage.setScene(scene);
         stage.show();
-        
-         
+
     }
 
     /**

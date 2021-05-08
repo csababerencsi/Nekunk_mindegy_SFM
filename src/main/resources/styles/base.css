@@ -32,11 +32,20 @@ and open the template in the editor.
     -fx-background-color: lightgrey;
     -fx-border-color: lightgrey;
 }
-#regbtn:hover {
+#regbtn:hover, #masterbtn:hover {
     -fx-border-color: lime;
 }
-#delallbtn:hover {
+#delallbtn:hover, #delselected:hover {
     -fx-border-color: red;
+}
+#inputdel {
+    -fx-border-radius: 0%;
+}
+#inputdel:hover {
+    -fx-border-color: orange;
+}
+#masterinp:hover {
+    -fx-border-color: magenta;
 }
 #creatdeltab:focus ,#defaulttab:focus, #statisticstab:focus {
     -fx-border-color: lawngreen;
@@ -84,4 +93,65 @@ and open the template in the editor.
 
 #automataname {
     -fx-text-align: center;
+}
+.chart-plot-background {
+    -fx-background-color: white;
+}
+.chart-vertical-grid-lines {
+    -fx-stroke: dimgray;
+}
+.chart-horizontal-grid-lines {
+    -fx-stroke: dimgray;
+}
+.data0.chart-bar {
+    -fx-background-color: green;
+    -fx-border-color: black;
+}
+.data1.chart-bar {
+    -fx-background-color: saddlebrown;
+    -fx-border-color: black;
+}
+.data2.chart-bar {
+    -fx-background-color: snow;
+    -fx-border-color: black;
+}
+.data3.chart-bar {
+    -fx-background-color: azure;
+    -fx-border-color: black;
+}
+.data4.chart-bar {
+    -fx-background-color: blue;
+    -fx-border-color: black;
+}
+.chart-title {
+    -fx-text-fill: black;
+    -fx-font-style: bold;
+    -fx-text-align: center;
+}
+.axis-label {
+    -fx-text-fill: black;
+    -fx-text-align: center;
+    -fx-font-stlye: bold;
+}
+.chart-legend {
+    -fx-background-color:  transparent;
+}
+.chart-legend-item{
+    -fx-box-sizing: 0;
+}
+.axis {
+    -fx-font-size: 1.4em;    
+    -fx-tick-label-fill: black;
+    -fx-font-family: Tahoma;
+    -fx-tick-length: 20;
+    -fx-minor-tick-length: 10;
+}
+#karbanOn:hover {
+    -fx-border-color: lime;
+}
+#karbanOff:hover {
+    -fx-border-color: red;
+}
+#karbanlabel {
+    -fx-font-weight: bold;
 }

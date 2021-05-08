@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.FXMLController">
+<AnchorPane fx:id="pane0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.FXMLController">
     <children>
         <TabPane fx:id="tabs">
             <tabs>
@@ -39,7 +39,7 @@
                                 <TextField fx:id="regmilk" layoutX="137.0" layoutY="230.0" promptText="pl. 16000ml" />
                                 <TextField fx:id="regsugar" layoutX="137.0" layoutY="273.0" promptText="pl. 23200g" />
                                 <Button fx:id="regbtn" layoutX="174.0" layoutY="312.0" mnemonicParsing="false" onAction="#regbtnpush" stylesheets="@../styles/base.css" text="Létrehozás" />
-                                <Button fx:id="delallbtn" layoutX="562.0" layoutY="242.0" mnemonicParsing="false" onAction="#delbtnpush" stylesheets="@../styles/base.css" text="Összes automata törlése" textAlignment="CENTER">
+                                <Button fx:id="delallbtn" layoutX="537.0" layoutY="242.0" mnemonicParsing="false" onAction="#delbtnpush" stylesheets="@../styles/base.css" text="Összes automata törlése" textAlignment="CENTER">
                                     <cursor>
                                         <Cursor fx:constant="DEFAULT" />
                                     </cursor>
@@ -131,7 +131,7 @@
                                 <Label fx:id="sumMilk" layoutX="181.0" layoutY="134.0" text="unknown" />
                                 <Label fx:id="sumSugar" layoutX="181.0" layoutY="161.0" text="unknown" />
                                 <Label fx:id="sumWater" layoutX="181.0" layoutY="188.0" text="unknown" />
-                        <BarChart fx:id="graphstat" layoutX="322.0" layoutY="14.0" title="Statisztika">
+                        <BarChart fx:id="graphstat" barGap="5.0" layoutX="322.0" layoutY="14.0" legendVisible="false" title="Statisztika">
                           <xAxis>
                             <CategoryAxis fx:id="statX" side="BOTTOM" />
                           </xAxis>
