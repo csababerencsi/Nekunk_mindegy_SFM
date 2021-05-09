@@ -16,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
@@ -24,15 +25,15 @@ import javafx.scene.layout.AnchorPane;
 public class FXMLController {
     
     @FXML
-    private Label karbanlabel;
-    
-    
-    @FXML
-    private TextField masterinp;
+    private TextField loginuser;
     
     @FXML
-    private Button masterbtn;
+    private PasswordField loginpass;
     
+    @FXML
+    private Button loginbtn;
+    
+
     @FXML
     private Label espressocounter;
 
@@ -52,11 +53,7 @@ public class FXMLController {
     private Button delselected;
     
     
-    @FXML
-    private Button karbanOn;
-    
-    @FXML
-    private Button karbanOff;    
+        
         
     @FXML
     public BarChart<?, ?> graphstat;
@@ -193,7 +190,7 @@ public class FXMLController {
     private TextField karbantartonev;
     
     @FXML
-    private TextField karbantartojelszo;
+    private PasswordField karbantartojelszo;
 
     @FXML
     private Label automatacounter;
@@ -238,17 +235,30 @@ public class FXMLController {
     }
     
     @FXML
-    private void masterbtnpush(ActionEvent event) {
+    private void logincheck(ActionEvent event) {
         
-        String inp=masterinp.getText();
-        String actual = "0000";
+        String user=loginuser.getText();
+        String pass=loginpass.getText();
         
-        if(inp.equals(actual)){
-            karbanOn.setVisible(true);
-            karbanOff.setVisible(true);
-            karbanlabel.setVisible(true);
+        Fajlkezelo f = new Fajlkezelo();
+        ArrayList<ArrayList<String>> records = f.readkarbantartoFile();
+        int tmp=0;
+        
+        for(var sor:records){
+            if( (sor.get(0).equals(user)) && (sor.get(1).equals(pass)) ){
+                tmp++;
+            }
+        }
+        
+        if(tmp==1){
+            onoffhandler(true);
+        }
+        else{
+            onoffhandler(false);
         }
     }
+    
+    
     
            
     @FXML
@@ -279,14 +289,7 @@ public class FXMLController {
         
     }   
     
-    @FXML
-    private void karbantartasON(ActionEvent event) {
-        onoffhandler(true);
-    }
-    @FXML
-    private void karbantartasOFF(ActionEvent event) {
-        onoffhandler(false);
-    }
+    
     
     public void onoffhandler(boolean valtozo){
         
