@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.FXMLController">
+<AnchorPane fx:id="pane0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.FXMLController">
     <children>
         <TabPane fx:id="tabs">
             <tabs>
@@ -49,6 +49,9 @@
                                 </Button>
                         <TextField fx:id="inputdel" layoutX="531.0" layoutY="99.0" prefHeight="26.0" prefWidth="167.0" promptText="Írd be a törlendő automatát!" />
                         <Button fx:id="delselected" layoutX="709.0" layoutY="99.0" mnemonicParsing="false" onAction="#deleteselected" text="Törlés" />
+                        <TextField fx:id="karbantartonev" layoutX="139.0" layoutY="415.0" promptText="Név" />
+                        <TextField fx:id="karbantartojelszo" layoutX="139.0" layoutY="450.0" promptText="Jelszó" />
+                        <Button fx:id="registerbtn" layoutX="173.0" layoutY="500.0" mnemonicParsing="false" text="Regisztálás" onAction="#registerbtnpush" />
                             </children>
                         </AnchorPane>
                     </content>

@@ -96,7 +96,8 @@ public class Fajlkezelo {
         }
 
     }
-
+    
+   
     public ArrayList<ArrayList<String>> readFile() {
 
         ArrayList<ArrayList<String>> records = new ArrayList<>();
@@ -188,5 +189,65 @@ public class Fajlkezelo {
         }
 
     }
+ 
+    
+    public ArrayList<ArrayList<String>>  readkarbantartoFile()
+    {
+        ArrayList<ArrayList<String>> records = new ArrayList<>();
+
+        try ( Scanner scanner = new Scanner(new File("karbantarto.csv"));) {
+            while (scanner.hasNextLine()) {
+                String sor = scanner.nextLine();
+                String[] soradat = sor.split(":");
+                ArrayList<String> tmplist = new ArrayList<>();
+
+                for (int i = 0; i < soradat.length; i++) {
+                    tmplist.add(soradat[i]);
+                }
+                records.add(tmplist);
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+
+        return records;
+    }
+    
+     public void updatekarbantartoFile(ArrayList<ArrayList<String>> adatlista) {
+
+        ArrayList<ArrayList<String>> records = new ArrayList<>();
+        records = readkarbantartoFile();
+
+        for (var elem : adatlista) {
+            ArrayList<String> tmplista = new ArrayList<>();
+            String tmp = String.join(":", elem);
+            tmplista.add(tmp);
+            records.add(tmplista);
+        }
+
+        try {
+            FileWriter myWriter = new FileWriter("karbantarto.csv");
+            ArrayList<String> outlist = new ArrayList<>();
+
+            for (var sor : records) {
+                String tmp2 = String.join(":", sor);
+                outlist.add(tmp2);
+            }
+
+            String outstr = String.join("\r\n", outlist);
+
+            myWriter.write(outstr);
+            myWriter.close();
+
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+
+    }
+
 
 }
+
+

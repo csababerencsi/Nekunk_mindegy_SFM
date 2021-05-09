@@ -188,6 +188,12 @@ public class FXMLController {
 
     @FXML
     private TextField moneyAmout;
+    
+    @FXML
+    private TextField karbantartonev;
+    
+    @FXML
+    private TextField karbantartojelszo;
 
     @FXML
     private Label automatacounter;
@@ -221,6 +227,8 @@ public class FXMLController {
     
     @FXML
     private Label sugarId;
+    
+
 
     
     @FXML
@@ -515,6 +523,34 @@ public class FXMLController {
         refresher();
         
 
+    }
+    
+    @FXML
+    private void registerbtnpush(ActionEvent event)
+    {
+        ArrayList<String> adatoktofile3 = new ArrayList<String>();
+        
+         if (karbantartonev.getText().equals("")) {
+             System.out.println("Adjon meg egy nevet!!!");
+
+        } else {
+            adatoktofile3.add(karbantartonev.getText());
+        }
+         
+         if (karbantartojelszo.getText().equals("")) {
+             System.out.println("Adjon meg egy jelszot!!!");
+
+        } else {
+            adatoktofile3.add(karbantartojelszo.getText());
+        }
+         ArrayList<ArrayList<String>> nagyadatoktofile3 = new ArrayList<ArrayList<String>>();
+         nagyadatoktofile3.add(adatoktofile3);
+         
+         if(adatoktofile3.size()==2){
+         Fajlkezelo fajl=new Fajlkezelo();
+         fajl.updatekarbantartoFile(nagyadatoktofile3);
+         }
+         
     }
 
     @FXML
