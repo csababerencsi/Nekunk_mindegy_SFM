@@ -212,12 +212,12 @@ and open the template in the editor.
     -fx-border-color: orange;
 }
 
-#loginbtn, #registerbtn, #regbtn, #delallbtn, #delselected {
+#loginbtn, #logoutbtn, #registerbtn, #regbtn, #delallbtn, #delselected {
     -fx-background-color: lightgrey;
     -fx-border-color: lightgrey;
     -fx-border-radius: 4;
 }
-#loginbtn:hover, #registerbtn:hover, #regbtn:hover, #delallbtn:hover, #delselected:hover {
+#loginbtn:hover, #logoutbtn:hover, #registerbtn:hover, #regbtn:hover, #delallbtn:hover, #delselected:hover {
     -fx-background-color: linear-gradient(#708090, #778899);
     -fx-border-color: #3c516c;
     -fx-border-radius: 4;

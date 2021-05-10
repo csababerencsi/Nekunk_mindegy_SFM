@@ -23,7 +23,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 public class FXMLController {
-    
+    @FXML
+    private Button logoutbtn;
     @FXML
     private TextField loginuser;
     
@@ -253,9 +254,12 @@ public class FXMLController {
         if(tmp==1){
             onoffhandler(true);
         }
-        else{
-            onoffhandler(false);
-        }
+    }
+    @FXML
+    private void logoutcheck(ActionEvent event) {
+        onoffhandler(false);
+        loginpass.setText("");
+        loginuser.setText("");
     }
     
     
