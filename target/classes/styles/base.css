@@ -21,9 +21,11 @@ and open the template in the editor.
 #regname, #regmoney, #regcoffee, #regwater, #regmilk, #regsugar {
     -fx-border-color: grey;
     -fx-alignment: center;
+    -fx-border-radius: 4;
 }
 #regname:hover, #regmoney:hover, #regcoffee:hover, #regwater:hover, #regmilk:hover, #regsugar:hover{
     -fx-border-color: lightcoral;
+    -fx-border-radius: 4;
 }
 #regname:active, #regmoney:active, #regcoffee:active, #regwater:active, #regmilk:active, #regsugar:active{
     -fx-border-color: blue;
@@ -42,17 +44,15 @@ and open the template in the editor.
     -fx-border-radius: 0%;
 }
 #inputdel:hover {
-    -fx-border-color: orange;
+    -fx-border-color: red;
+    -fx-border-radius: 2;
 }
 #masterinp:hover {
     -fx-border-color: magenta;
 }
-#creatdeltab:focus ,#defaulttab:focus, #statisticstab:focus {
-    -fx-border-color: lawngreen;
-}
-#creatdeltab:hover,#defaulttab:hover, #statisticstab:hover {
-    -fx-border-color: lawngreen;
-    -fx-border-bottom: none;
+#creatdeltab,#defaulttab, #statisticstab {
+     border-bottom: inherit;
+    -fx-border-radius: 2;
 }
 
 #espressoBtn, #cappucinoBtn, #latteBtn, #milkyCoffeeBtn {
@@ -68,7 +68,9 @@ and open the template in the editor.
     -fx-border-radius: 4;
 }
 #startButton:hover, #saveMoney:hover, #saveCoffee:hover, #saveWater:hover, #saveMilk:hover, #saveSugar:hover {
-    -fx-border-color: lime;
+    -fx-background-color: linear-gradient(#708090, #778899);
+    -fx-border-color: #3c516c;
+    -fx-border-radius: 4;
 }
 #resetButton:hover {
     -fx-border-color: orange;
@@ -76,9 +78,11 @@ and open the template in the editor.
 
 #inputMoney, #inputCoffee, #inputWater, #inputMilk, #inputSugar{
     -fx-alignment: center;
+    -fx-border-radius: 2;
 }
 #inputMoney:hover, #inputCoffee:hover, #inputWater:hover, #inputMilk:hover, #inputSugar:hover{
     -fx-border-color: lightcoral;
+    -fx-border-radius: 2;
 }
 #summoneyId, #valueMoney, #coffeeId, #valueCoffee, #waterId, #valueWater, #milkId, #valueMilk, #sugarId, #valueSugar {
     -fx-font-weight: bold;
@@ -126,7 +130,7 @@ and open the template in the editor.
     -fx-border-color: black;
 }
 .data4.chart-bar {
-    -fx-background-color: blue;
+    -fx-background-color: deepskyblue;
     -fx-border-color: black;
 }
 .chart-title {
@@ -199,11 +203,39 @@ and open the template in the editor.
     -fx-font-weight: bold;
 }
 
-#loginuser, loginpass {
-    
+#loginuser, #loginpass {
+    -fx-border-color: grey;
+    -fx-border-radius: 4;
+}
+#loginuser:hover, #loginpass:hover {
+    -fx-border-radius: 4;
+    -fx-border-color: orange;
 }
 
+#loginbtn, #registerbtn, #regbtn, #delallbtn, #delselected {
+    -fx-background-color: lightgrey;
+    -fx-border-color: lightgrey;
+    -fx-border-radius: 4;
+}
 #loginbtn:hover, #registerbtn:hover, #regbtn:hover, #delallbtn:hover, #delselected:hover {
+    -fx-background-color: linear-gradient(#708090, #778899);
+    -fx-border-color: #3c516c;
+    -fx-border-radius: 4;
+}
+#karbantartonev, #karbantartojelszo {
+    -fx-border-radius: 4;
+    -fx-border-color: grey;
+}
+#karbantartonev:hover, #karbantartojelszo:hover {
+    -fx-border-radius: 4;
+    -fx-border-color: orange;
+}
+#saveMoney, #saveCoffee, #saveWater, #saveMilk, #saveSugar, #chooseAutomata {
+    -fx-background-color: lightgrey;
+    -fx-border-color: lightgrey;
+    -fx-border-radius: 4;
+}
+#saveMoney:hover, #saveCoffee:hover, #saveWater:hover, #saveMilk:hover, #saveSugar:hover, #chooseAutomata:hover{
     -fx-background-color: linear-gradient(#708090, #778899);
     -fx-border-color: #3c516c;
     -fx-border-radius: 4;

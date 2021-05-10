@@ -27,19 +27,19 @@
                         <AnchorPane fx:id="createdelpanel" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-image: coffee.jpg;" styleClass="createAutomatBg" stylesheets="@../../java/hu/unideb/inf/base.css">
 
                             <children>
-                                <TextField fx:id="regname" layoutX="136.0" layoutY="59.0" promptText="pl. teszt1" />
+                                <TextField fx:id="regname" layoutX="137.0" layoutY="59.0" promptText="pl. teszt1" />
                                 <TextField fx:id="regmoney" layoutX="137.0" layoutY="99.0" promptText="pl. 500000ft" />
-                                <Label layoutX="46.0" layoutY="63.0" text="Automata neve:" />
-                                <Label layoutX="68.0" layoutY="103.0" text="Össz pénz:" />
-                                <Label layoutX="91.0" layoutY="147.0" text="Kávé:" />
-                                <Label layoutX="96.0" layoutY="186.0" text="Víz:" />
-                                <Label layoutX="96.0" layoutY="234.0" text="Tej:" />
-                                <Label layoutX="88.0" layoutY="277.0" text="Cukor:" />
-                                <TextField fx:id="regcoffee" layoutX="137.0" layoutY="143.0" promptText="pl. 25000g" />
-                                <TextField fx:id="regwater" layoutX="137.0" layoutY="182.0" promptText="pl. 20000ml" />
-                                <TextField fx:id="regmilk" layoutX="137.0" layoutY="230.0" promptText="pl. 16000ml" />
-                                <TextField fx:id="regsugar" layoutX="137.0" layoutY="273.0" promptText="pl. 23200g" />
-                                <Button fx:id="regbtn" layoutX="174.0" layoutY="312.0" mnemonicParsing="false" onAction="#regbtnpush" stylesheets="@../styles/base.css" text="Létrehozás" />
+                                <Label layoutX="41.0" layoutY="63.0" text="Automata neve:" />
+                                <Label layoutX="64.0" layoutY="103.0" text="Össz pénz:" />
+                                <Label layoutX="91.0" layoutY="143.0" text="Kávé:" />
+                                <Label layoutX="96.0" layoutY="183.0" text="Víz:" />
+                                <Label layoutX="96.0" layoutY="223.0" text="Tej:" />
+                                <Label layoutX="88.0" layoutY="263.0" text="Cukor:" />
+                                <TextField fx:id="regcoffee" layoutX="137.0" layoutY="139.0" promptText="pl. 25000g" />
+                                <TextField fx:id="regwater" layoutX="137.0" layoutY="179.0" promptText="pl. 20000ml" />
+                                <TextField fx:id="regmilk" layoutX="137.0" layoutY="219.0" promptText="pl. 16000ml" />
+                                <TextField fx:id="regsugar" layoutX="137.0" layoutY="259.0" promptText="pl. 23200g" />
+                                <Button fx:id="regbtn" layoutX="171.0" layoutY="299.0" mnemonicParsing="false" onAction="#regbtnpush" stylesheets="@../styles/base.css" text="Létrehozás" />
                                 <Button fx:id="delallbtn" layoutX="537.0" layoutY="242.0" mnemonicParsing="false" onAction="#delbtnpush" stylesheets="@../styles/base.css" text="Összes automata törlése" textAlignment="CENTER">
                                     <cursor>
                                         <Cursor fx:constant="DEFAULT" />
@@ -49,16 +49,16 @@
                                     </opaqueInsets>
                                 </Button>
                         <TextField fx:id="inputdel" layoutX="531.0" layoutY="99.0" prefHeight="26.0" prefWidth="167.0" promptText="Írd be a törlendő automatát!" />
-                        <Button fx:id="delselected" layoutX="709.0" layoutY="99.0" mnemonicParsing="false" onAction="#deleteselected" text="Törlés" />
-                        <TextField fx:id="karbantartonev" layoutX="139.0" layoutY="415.0" promptText="Név" />
-                        <Button fx:id="registerbtn" layoutX="173.0" layoutY="500.0" mnemonicParsing="false" onAction="#registerbtnpush" text="Regisztálás" />
-                        <PasswordField fx:id="karbantartojelszo" layoutX="139.0" layoutY="450.0" promptText="Jelszó" />
+                        <Button fx:id="delselected" layoutX="712.0" layoutY="98.0" mnemonicParsing="false" onAction="#deleteselected" stylesheets="@../styles/base.css" text="Törlés" />
+                        <TextField fx:id="karbantartonev" layoutX="136.0" layoutY="416.0" promptText="Név" stylesheets="@../styles/base.css" />
+                        <Button fx:id="registerbtn" layoutX="169.0" layoutY="496.0" mnemonicParsing="false" onAction="#registerbtnpush" stylesheets="@../styles/base.css" text="Regisztálás" />
+                        <PasswordField fx:id="karbantartojelszo" layoutX="136.0" layoutY="456.0" promptText="Jelszó" stylesheets="@../styles/base.css" />
                             </children>
                         </AnchorPane>
                     </content>
                 </Tab>
 
-                <Tab fx:id="defaulttab" closable="false" text="Automatak">
+                <Tab fx:id="defaulttab" closable="false" text="Automaták">
 
 
                     <content>
@@ -66,8 +66,8 @@
                             <children>
                                 <Button fx:id="espressoBtn" layoutX="86.0" layoutY="184.0" mnemonicParsing="false" onAction="#espressoBtnPush" text="Espresso" />
                                 <Button fx:id="cappucinoBtn" layoutX="78.0" layoutY="230.0" mnemonicParsing="false" onAction="#cappucinoBtnPush" text="Cappuccino" />
-                                <Button fx:id="latteBtn" layoutX="96.0" layoutY="274.0" mnemonicParsing="false" onAction="#latteBtnPush" text="Latte" />
-                                <Button fx:id="milkyCoffeeBtn" layoutX="82.0" layoutY="318.0" mnemonicParsing="false" onAction="#milkyBtnPush" text="Tejes kávé" />
+                                <Button fx:id="latteBtn" layoutX="96.0" layoutY="276.0" mnemonicParsing="false" onAction="#latteBtnPush" text="Latte" />
+                                <Button fx:id="milkyCoffeeBtn" layoutX="82.0" layoutY="322.0" mnemonicParsing="false" onAction="#milkyBtnPush" text="Tejes kávé" />
                                 <Label layoutX="89.0" layoutY="149.0" style="-fx-font-weight: bold;" text="Kávé fajták" />
                                 <TextField fx:id="inputMoney" layoutX="564.0" layoutY="175.0" prefHeight="26.0" prefWidth="84.0" promptText="pl. 250000Ft" visible="false" />
                                 <Label fx:id="summoneyId" layoutX="436.0" layoutY="179.0" stylesheets="@../styles/base.css" text="Össz pénz:" visible="false" />
@@ -98,11 +98,11 @@
                                         <Font size="24.0" />
                                     </font>
                                 </Label>
-                                <Label layoutX="157.0" layoutY="188.0" text="250Ft" />
-                                <Label layoutX="165.0" layoutY="234.0" text="350Ft" />
-                                <Label layoutX="150.0" layoutY="278.0" text="300Ft" />
-                                <Label layoutX="165.0" layoutY="323.0" text="400Ft" />
-                                <MenuButton fx:id="chooseAutomata" layoutX="72.0" layoutY="47.0" mnemonicParsing="false" text="Válassz automatát!">
+                                <Label layoutX="157.0" layoutY="189.0" text="250Ft" />
+                                <Label layoutX="165.0" layoutY="235.0" text="350Ft" />
+                                <Label layoutX="150.0" layoutY="281.0" text="300Ft" />
+                                <Label layoutX="165.0" layoutY="327.0" text="400Ft" />
+                                <MenuButton fx:id="chooseAutomata" layoutX="72.0" layoutY="47.0" mnemonicParsing="false" style="-fx-font-weight: italic;" text="Válassz automatát!">
                                     <items>
                                         <MenuItem fx:id="defaultautomata" mnemonicParsing="false" onAction="#switchtodefault" text="Default" visible="false" />
                                     </items>
@@ -110,9 +110,9 @@
                                 <Label fx:id="errorindicator" layoutX="212.0" layoutY="234.0" prefHeight="18.0" prefWidth="193.0" textFill="#ff0404" visible="false" />
                         <Label fx:id="karbanlabel" layoutX="91.0" layoutY="472.0" text="Karbantartás mód:" visible="false" />
                         <Label layoutX="346.0" layoutY="479.0" />
-                        <TextField fx:id="loginuser" layoutX="114.0" layoutY="386.0" promptText="Felhasználónév" />
-                        <Button fx:id="loginbtn" layoutX="143.0" layoutY="459.0" mnemonicParsing="false" onAction="#logincheck" text="Bejelentkezés" />
-                        <PasswordField fx:id="loginpass" layoutX="114.0" layoutY="420.0" promptText="Jelszó" />
+                        <TextField fx:id="loginuser" layoutX="81.0" layoutY="393.0" promptText="Felhasználónév" />
+                        <Button fx:id="loginbtn" layoutX="110.0" layoutY="466.0" mnemonicParsing="false" onAction="#logincheck" stylesheets="@../styles/base.css" text="Bejelentkezés" />
+                        <PasswordField fx:id="loginpass" layoutX="81.0" layoutY="427.0" promptText="Jelszó" />
                   
                             </children>
                         </AnchorPane>
@@ -127,7 +127,7 @@
                                 <Label layoutX="70.0" layoutY="74.0" style="-fx-underline: true;" text="Össz pénz:" />
                                 <Label layoutX="71.0" layoutY="105.0" style="-fx-underline: true;" text="Össz kávé:" />
                                 <Label layoutX="71.0" layoutY="134.0" style="-fx-underline: true;" text="Össz tej:" />
-                                <Label layoutX="68.0" layoutY="188.0" style="-fx-underline: true;" text="Össz cukor:" />
+                                <Label layoutX="71.0" layoutY="188.0" style="-fx-underline: true;" text="Össz cukor:" />
                                 <Label layoutX="70.0" layoutY="161.0" style="-fx-underline: true;" text="Össz víz:" />
                                 <Label fx:id="sumMoney" layoutX="181.0" layoutY="74.0" text="unknown" />
                                 <Label fx:id="sumCoffee" layoutX="181.0" layoutY="105.0" text="unknown" />
@@ -142,14 +142,14 @@
                             <NumberAxis fx:id="statY" side="LEFT" />
                           </yAxis>
                         </BarChart>
-                        <Label layoutX="78.0" layoutY="235.0" text="Espresso" />
-                        <Label layoutX="78.0" layoutY="268.0" text="Cappuccino" />
-                        <Label layoutX="79.0" layoutY="297.0" text="Latte" />
-                        <Label layoutX="78.0" layoutY="325.0" text="Tejes kávé" />
-                        <Label fx:id="espressocounter" layoutX="181.0" layoutY="235.0" text="0" />
-                        <Label fx:id="cappuccinocounter" layoutX="181.0" layoutY="268.0" text="0" />
-                        <Label fx:id="lattecounter" layoutX="181.0" layoutY="297.0" text="0" />
-                        <Label fx:id="milkycoffeecounter" layoutX="181.0" layoutY="325.0" text="0" />
+                        <Label layoutX="71.0" layoutY="235.0" style="-fx-underline: true;" text="Össz Espresso:" />
+                        <Label layoutX="71.0" layoutY="268.0" style="-fx-underline: true;" text="Össz Cappuccino:" />
+                        <Label layoutX="71.0" layoutY="297.0" style="-fx-underline: true;" text="Össz Latte:" />
+                        <Label layoutX="71.0" layoutY="325.0" style="-fx-underline: true;" text="Össz Tejes kávé:" />
+                        <Label fx:id="espressocounter" layoutX="204.0" layoutY="235.0" text="0" />
+                        <Label fx:id="cappuccinocounter" layoutX="204.0" layoutY="268.0" text="0" />
+                        <Label fx:id="lattecounter" layoutX="204.0" layoutY="297.0" text="0" />
+                        <Label fx:id="milkycoffeecounter" layoutX="204.0" layoutY="325.0" text="0" />
                             </children>
                         </AnchorPane>
                     </content>
