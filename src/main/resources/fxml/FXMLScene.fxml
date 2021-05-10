@@ -127,13 +127,13 @@
                                 <Label layoutX="70.0" layoutY="74.0" style="-fx-underline: true;" text="Össz pénz:" />
                                 <Label layoutX="71.0" layoutY="105.0" style="-fx-underline: true;" text="Össz kávé:" />
                                 <Label layoutX="71.0" layoutY="134.0" style="-fx-underline: true;" text="Össz tej:" />
-                                <Label layoutX="71.0" layoutY="161.0" style="-fx-underline: true;" text="Össz cukor:" />
-                                <Label layoutX="70.0" layoutY="188.0" style="-fx-underline: true;" text="Össz víz:" />
+                                <Label layoutX="68.0" layoutY="188.0" style="-fx-underline: true;" text="Össz cukor:" />
+                                <Label layoutX="70.0" layoutY="161.0" style="-fx-underline: true;" text="Össz víz:" />
                                 <Label fx:id="sumMoney" layoutX="181.0" layoutY="74.0" text="unknown" />
                                 <Label fx:id="sumCoffee" layoutX="181.0" layoutY="105.0" text="unknown" />
-                                <Label fx:id="sumMilk" layoutX="181.0" layoutY="134.0" text="unknown" />
+                                <Label fx:id="sumMilk" layoutX="181.0" layoutY="188.0" text="unknown" />
                                 <Label fx:id="sumSugar" layoutX="181.0" layoutY="161.0" text="unknown" />
-                                <Label fx:id="sumWater" layoutX="181.0" layoutY="188.0" text="unknown" />
+                                <Label fx:id="sumWater" layoutX="181.0" layoutY="134.0" text="unknown" />
                         <BarChart fx:id="graphstat" barGap="5.0" layoutX="322.0" layoutY="14.0" legendVisible="false" title="Statisztika">
                           <xAxis>
                             <CategoryAxis fx:id="statX" side="BOTTOM" />
